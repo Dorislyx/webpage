@@ -1,0 +1,39 @@
+
+<!-- saved from url=(0029)http://www.w3.org/2000/xmlns/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>A Namespace Name for xmlns Attributes</title>
+</head>
+<body>
+<p>See:</p>
+
+<ul>
+<li><a href="http://www.w3.org/TR/1999/REC-xml-names-19990114">
+<cite>Namespaces in XML</cite></a>, 14 Jan 1999.</li>
+</ul>
+
+<p>The prefix <tt>xmlns:</tt> was specified as a syntactic device
+for declaring namespaces, but was not itself associated with any
+namespace name by the Jan 1999 namespaces specfication. But in some
+processing contexts, e.g. <a href="http://www.w3.org/DOM">DOM</a>, it is useful
+to represent all XML attributes as (namespace name, local name)
+pairs. For this purpose, the namespace name <tt>
+http://www.w3.org/2000/xmlns/</tt> is assigned.</p>
+
+<p>Note that you <strong>must</strong> use the reserved prefix <tt>
+xmlns:</tt> when declaring namespaces. It does <em>not</em> work to
+declare another prefix with this namespace name and then try to use
+it for namespace declarations.</p>
+
+<p>The attribute name <tt>xmlns</tt>, which is used to declare the
+default namespace, is also hereby associated with this namespace
+name.</p>
+
+<address>John Cowan and Dan Connolly, for
+<br>
+ <a href="http://www.w3.org/XML/Activity#core-wg">the W3C XML Core WG</a>
+<br>
+ $Revision: 1.6 $ of $Date: 2000/02/23 15:57:21 $ by $Author: connolly $</address>
+
+
+
+</body></html>

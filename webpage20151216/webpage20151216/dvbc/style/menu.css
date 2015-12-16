@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* CSS Document */
+
+#menuDiv {
+	margin:0 0 0 0;
+	position:absolute;
+	top:720px;
+	left:0px;
+	width:1280px;
+	height:158px;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+	//-webkit-transition-timing-function:ease-in;
+}
+
+#opa_bg {
+	margin:0;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1280px;
+	height:158px;
+	background-color:#000;
+	opacity:0.8;
+}
+
+#menuFocus {
+	margin:0 0 0 0;
+	position:absolute;
+	top:3px;
+	left:524px;
+	width:232px;
+	height:155px;
+	overflow:hidden;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.4s;
+	background-image:-webkit-gradient(radial, 50% 40%, 20, 50% 40%, 160, from(#30b1f5), to(#001139));
+}
+
+#menuLeft {
+	margin:0 0 0 0;
+	position:absolute;
+	top:35px;
+	left:49px;
+	width:45px;
+	height:68px;
+	background-image:url(../image/leftSign.png);
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.2s;
+}
+
+#menuRight {
+	margin:0 0 0 0;
+	position:absolute;
+	top:35px;
+	left:1186px;
+	width:45px;
+	height:68px;
+	background-image:url(../image/rightSign.png);
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.2s;
+}
+
+#menuList0, #menuList1, #menuList2, #menuList3, #menuList4, #menuList5, #menuList6, #menuList7, #menuList8 {
+	margin:0 0 0 0;
+	position:absolute;
+	top:15px;
+	width:150px;
+	height:124px;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.5s;
+}
+
+#fontList0, #fontList1, #fontList2, #fontList3, #fontList4, #fontList5, #fontList6, #fontList7, #fontList8 {
+	margin:0 0 0 0;
+	position:absolute;
+	top:70px;
+	left:0px;
+	width:150px;
+	height:44px;
+	font-size:18px;
+	font-weight:bolder;
+	line-height:44px;
+	color:#666666;
+	text-align:center;
+	background:no-repeat;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.4s;
+}
+
+#leftLine {
+	margin:0 0 0 0;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:640px;
+	height:3px;
+	background: -webkit-gradient(linear, left top, right top, from(#080812), to(#1863c9));
+}
+
+#rightLine {
+	margin:0 0 0 0;
+	position:absolute;
+	top:0px;
+	left:640px;
+	width:640px;
+	height:3px;
+	background: -webkit-gradient(linear, right top, left top, from(#080812), to(#1863c9));
+}

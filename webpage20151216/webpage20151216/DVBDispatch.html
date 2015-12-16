@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>boot</title>
+<script language="javascript"> 
+document.onkeydown = keyEvent;
+var indexSE=0;
+function init(){
+	document.getElementById("addImg").style.visibility = "visible";
+}
+function keyEvent (e){
+    var keyValue = e.which;
+    switch (keyValue){
+    	case 37:	//left
+		if(indexSE==0){
+			document.getElementById("dvbImg").style.backgroundImage = "url(boot/1.png)"
+			document.getElementById("iptvImg").style.backgroundImage = "url(boot/4.png)"
+			document.getElementById("ottImg").style.backgroundImage = "url(boot/5.png)"
+			indexSE=2;
+		} else if(indexSE==2){
+			document.getElementById("dvbImg").style.backgroundImage = "url(boot/2.png)"
+			document.getElementById("iptvImg").style.backgroundImage = "url(boot/6.png)"
+			document.getElementById("ottImg").style.backgroundImage = "url(boot/4.png)"
+			indexSE=1;
+		} else if(indexSE==1){
+			document.getElementById("dvbImg").style.backgroundImage = "url(boot/3.png)"
+			document.getElementById("iptvImg").style.backgroundImage = "url(boot/5.png)"
+			document.getElementById("ottImg").style.backgroundImage = "url(boot/6.png)"
+			indexSE=0;
+		}
+		return false;
+		break;
+		case 38:	//up
+		return false;
+		break
+	    case 39:   //right
+		if(indexSE==0){
+			document.getElementById("dvbImg").style.backgroundImage = "url(boot/2.png)"
+			document.getElementById("iptvImg").style.backgroundImage = "url(boot/6.png)"
+			document.getElementById("ottImg").style.backgroundImage = "url(boot/4.png)"
+			indexSE=1;
+		} else if(indexSE==1){
+			document.getElementById("dvbImg").style.backgroundImage = "url(boot/1.png)"
+			document.getElementById("iptvImg").style.backgroundImage = "url(boot/4.png)"
+			document.getElementById("ottImg").style.backgroundImage = "url(boot/5.png)"
+			indexSE=2;
+		} else if(indexSE==2){
+			document.getElementById("dvbImg").style.backgroundImage = "url(boot/3.png)"
+			document.getElementById("iptvImg").style.backgroundImage = "url(boot/5.png)"
+			document.getElementById("ottImg").style.backgroundImage = "url(boot/6.png)"
+			indexSE=0;
+		}
+		return false;
+	    break
+	    case 40:   //down
+		return false;
+	    break
+	    case 13://enter键
+		if(indexSE==0){
+			document.location.href = "dvbt/dvbt.html";
+		} else if(indexSE==1){
+			document.location.href = "dvbc/dvbc.html";
+		} else {
+			document.location.href = "dvbs/search.html";
+		}
+		return false;
+	    break
+	    case 37:
+	    break
+		case 203:   //exit
+			document.location.href = "./iptv.html";
+		default:
+		break
+	}
+}
+</script>
+<style type="text/css">
+#img
+{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1280px;
+	height:720px;
+	background-image:url(boot/7.png);
+}
+#dvbImg
+{
+	position:absolute;
+	top:310px;
+	left:585px;
+	width:114px;
+	height:251px;
+	background-image:url(boot/3.png);
+}
+
+#iptvImg
+{
+	position:absolute;
+	top:325px;
+	left:390px;
+	width:81px;
+	height:182px;
+	background-image:url(boot/5.png);
+}
+#ottImg
+{
+	position:absolute;
+	top:325px;
+	left:805px;
+	width:81px;
+	height:182px;
+	background-image:url(boot/6.png);
+}
+</style>
+</head>
+
+<body onload="init()">
+<div id="img"></div>
+<div id="dvbImg"></div>
+<div id="iptvImg"></div>
+<div id="ottImg"></div>
+</body>
+</html>

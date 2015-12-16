@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<script language='JavaScript' src='js/config.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/common.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/net.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/gameList.js' charset='utf-8'></script>
+<title></title>
+<style type='text/css'>
+<!--
+* {
+	margin: 0 0 0 0;
+	position: absolute;
+	color: #e6e6e6;
+}
+#textList7, #textList6, #textList5, #textList4, #textList3, #textList2, #textList1, #textList0 {
+	margin: 0 0 0 0;
+	left: 55px;
+	width: 560px;
+	height: 32px;
+	line-height: 30px;
+	font-size: 22px;
+	overflow: hidden;
+}
+#iconList7, #iconList6, #iconList5, #iconList4, #iconList3, #iconList2, #iconList1, #iconList0 {
+	margin: 0 0 0 0;
+	left: 15px;
+	width: 38px;
+	height: 38px;
+	overflow: hidden;
+}
+-->
+</style>
+</head>
+<body bgcolor='transparent' onload='getConfig();'>
+<!-- 显示列表部分，即非全屏状态 -->
+<div id='divBrowser' style='left:0px; top:0px; width:1280px; height:720px;'>
+	<!-- 功能选项图标 -->
+	<div id='titleIcon' style='left:105px; top:90px; width:539px; height:52px;'></div>
+	<!-- 列表背景图片 -->
+	<div id='bgPicture' style='left:103px; top:159px; width:1072px; height:493px;'></div>
+	<!-- 硬盘图标，硬盘信息 -->
+	<div id='diskIcon' style='left:128px; top:166px; width:43px; height:34px; background-image:url(image/pDisk.png);'></div>
+	<div id='diskInfo' style='left:185px; top:162px; width:950px; height:38px; line-height:38px; font-size:24px; overflow:hidden;'></div>
+	<!-- 项目名称列表 -->
+	<div id='itemList' style='left:117px; top:216px; width:628px; height:0px; overflow:hidden;'>
+		<!-- 项目焦点条 -->
+		<div id='itemFocus' style='left:0px; top:0px; width:628px; height:50px; background-image:url(image/pFileFocus.gif); overflow:hidden;'></div>
+		<!-- 项目图标列表 -->
+		<div id='iconList0' style='top:  6px;'></div>
+		<div id='iconList1' style='top: 54px;'></div>
+		<div id='iconList2' style='top:102px;'></div>
+		<div id='iconList3' style='top:150px;'></div>
+		<div id='iconList4' style='top:198px;'></div>
+		<div id='iconList5' style='top:246px;'></div>
+		<div id='iconList6' style='top:294px;'></div>
+		<div id='iconList7' style='top:342px;'></div>
+		<!-- 项目文字列表 -->
+		<div id='textList0' style='top:  6px;'></div>
+		<div id='textList1' style='top: 54px;'></div>
+		<div id='textList2' style='top:102px;'></div>
+		<div id='textList3' style='top:150px;'></div>
+		<div id='textList4' style='top:198px;'></div>
+		<div id='textList5' style='top:246px;'></div>
+		<div id='textList6' style='top:294px;'></div>
+		<div id='textList7' style='top:342px;'></div>
+	</div>
+	<!-- 列表翻页指示，页号显示 -->
+	<div id='pageNumber' style='left:119px; top:617px; width:400px; height:31px; line-height:23px; font-size:20px; overflow:hidden;'></div>
+	<div id='pageUp' style='left:708px; top:619px; width:26px; height:13px; background-image:url(image/pPageUp.jpg); overflow:hidden; visibility:hidden;'></div>
+	<div id='pageDown' style='left:708px; top:636px; width:26px; height:13px;  background-image:url(image/pPageDown.jpg); overflow:hidden; visibility:hidden;'></div>
+	<!-- 项目类型图标 -->
+	<div id='divPicture' style='left:800px; top:230px; width:320px; height:190px;'><img id='itemIcon' style='left:0; top:0; width:100%; height:100%;'/></div>
+	<!-- 项目信息 -->
+	<div id='itemInfo' style='left:800px; top:428px; width:356px; height:170px; line-height:20px; font-size:20px; overflow:hidden; visibility:hidden;'></div>
+	<!-- 状态提示信息 -->
+	<div id='divInfo' style='left:210px; top:345px; width:434px; height:116px; line-height:30px; font-size:24px; text-align:center; overflow:hidden; visibility:hidden;'></div>
+</div>
+<!-- 游戏退出提示 -->
+<div id='divGameStatus' style='left:423px; top:302px; width:434px; height:116px; overflow:hidden; visibility:hidden;'>
+	<div id='divGameStatusText' style='left:10px; top:0px; width:414px; height:116px; line-height:116px; font-size:20px; text-align:center; overflow:hidden;'></div>
+</div>
+<!-- 功能菜单部分 -->
+<div id='divMenu' style='left:0px; top:0px; width:1280px; height:720px; background-color:#000000; filter:alpha(opacity=70); visibility:hidden;'>
+    <div id='miniMenuBg' style='left:463px; top:270px; width:354px; height:181px; overflow:hidden;'>
+        <div id='divMenuFocus' style='left:65px; top:40px; width:84px; height:92px; overflow:hidden;'></div>
+        <div id='divMenuPos1' style='left: 65px; top:40px; width:84px; height:92px; overflow:hidden;'></div>
+        <div id='divMenuPos2' style='left:195px; top:40px; width:84px; height:92px; overflow:hidden;'></div>
+    </div>
+</div>
+</body>
+</html>

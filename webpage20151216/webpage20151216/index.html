@@ -1,0 +1,115 @@
+
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text-html; charset=UTF-8" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="pragma" content="no-cache" />
+    <title>VOD Test</title>
+		<script type="text/javascript">
+			var player = new AVPlayer();
+			var stat_pause = 1;
+			var fast_rate = 0;
+			var vol_val = 20;
+			
+			document.onkeypress = keyEvent;
+			
+			function keyEvent(e)
+			{
+				var keyValue = e.which;
+				document.getElementById("test1").innerHTML = 'onkeypress ��ֵ============= '+keyValue;
+				
+				switch(keyValue){
+					case 412:  // rewind
+						switch(fast_rate){
+							case -2:
+								fast_rate = -4;
+								break;
+							case -4:
+								fast_rate = -8;
+								break;
+							case -8:
+								fast_rate = -16;
+								break;
+							default:
+								fast_rate = -2;
+						}
+						player.Ag_vod_fast(fast_rate);
+						break;
+					case 413:  // stop
+						location.href = "./testvod.html";
+						break;
+					case 415:  // play / pause
+						if(stat_pause == 1){
+							player.Ag_vod_resume();
+							stat_pause = 0;
+						}else{
+							player.Ag_vod_pause();
+							stat_pause = 1;
+						}
+						break;
+					case 213:
+							location.href = "./testvod.html";
+							break;
+					case 417:  // fast
+						switch(fast_rate){
+							case 2:
+								fast_rate = 4;
+								break;
+							case 4:
+								fast_rate = 8;
+								break;
+							case 8:
+								fast_rate = 16;
+								break;
+							default:
+								fast_rate = 2;
+						}
+						player.Ag_vod_fast(fast_rate);
+						break;
+					case 49:   // 1
+						player.Ag_vod_seek(50);
+						break;
+					case 50:   // 2
+						document.getElementById("test2").innerHTML = 'status======= '+player.Ag_vod_getStatus();
+						break;
+					case 51:   // 3
+						player.Ag_vod_close();
+						player.Ag_vod_play("http://192.168.3.65/stream/apple/bipbopall.m3u8",1);
+						break;
+					case 1073741880:  // vol +
+						vol_val = player.Ag_audio_getVolume();
+						if(vol_val < 95)
+							vol_val += 5;
+						else
+							vol_val = 10;
+						document.getElementById("test2").innerHTML = 'vol======= ' + vol_val;
+						player.Ag_audio_setVolume(vol_val);
+						break;
+					case 1073741884:  // vol -
+						vol_val = player.Ag_audio_getVolume();
+						if(vol_val > 10)
+							vol_val -= 5;
+						else
+							vol_val = 100;
+						document.getElementById("test2").innerHTML = 'vol======= ' + vol_val;
+						player.Ag_audio_setVolume(vol_val);
+						break;
+					default:
+						break;
+				}
+				return;
+			}
+			
+			
+			function onLoad() {
+				
+			}
+		</script>
+  </head>
+  <body onLoad="onLoad();" style="margin:0; background-color:Transparent">
+  		<div style="position:absolute; top:100px; left:100px; width:400px; height:300px; background:#666; font-size:24px;">
+        	<a href="flash.html">flash</a>
+        </div>
+      	<!--<embed width="720" height="576" flashvars="model=EC2118S&q=funny+cats" src="../yt_lbl.swf" type="application/x-shockwave-flash">-->
+  </body>
+</html>

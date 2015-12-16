@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="167"
+   name=""
+   committed-date="2013-12-25T10:24:01.147000Z"
+   url="https://192.168.202.7/scm/Webpages/trunk/ETB_DVB-C_DEMO/webpage/js"
+   last-author="Luyunhai"
+   kind="dir"
+   uuid="1d3700c4-0510-714d-b28c-695ff54bdf84"
+   repos="https://192.168.202.7/scm/Webpages"
+   revision="196"/>
+<entry
+   committed-rev="89"
+   name="ShowListFactory.js"
+   text-time="2013-11-28T09:00:04.780411Z"
+   committed-date="2013-11-29T12:47:44.109797Z"
+   checksum="5bee090bcfdd36f07853c276a1afc2ee"
+   last-author="Luyunhai"
+   kind="file"
+   prop-time="2013-11-29T12:39:03.249797Z"/>
+<entry
+   committed-rev="230"
+   name="config.js"
+   text-time="2014-01-16T15:20:47.985413Z"
+   committed-date="2014-01-16T15:50:39.679921Z"
+   checksum="af979c98bcd5429b46e3961f905fdb94"
+   last-author="Luyunhai"
+   kind="file"
+   prop-time="2013-11-29T12:39:03.257798Z"
+   revision="230"/>
+<entry
+   committed-rev="89"
+   name="FocusFactory.js"
+   text-time="2013-11-20T03:24:25.469628Z"
+   committed-date="2013-11-29T12:47:44.109797Z"
+   checksum="65ceb59440a68c8155bfb477cf576b5a"
+   last-author="Luyunhai"
+   kind="file"/>
+<entry
+   committed-rev="230"
+   name="dvb.js"
+   text-time="2014-01-16T15:37:52.870033Z"
+   committed-date="2014-01-16T15:50:39.679921Z"
+   checksum="936e88e42aaf89218d821fab8390eb11"
+   last-author="Luyunhai"
+   kind="file"
+   prop-time="2013-11-29T12:39:03.268798Z"
+   revision="230"/>
+</wc-entries>

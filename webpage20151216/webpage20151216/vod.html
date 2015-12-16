@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style/menu.css" type="text/css" />
+<link rel="stylesheet" href="style/vod.css" type="text/css" />
+<script language="javascript" src="js/menu.js"></script>
+<script language="javascript" src="js/vod_list.js"></script>
+<script language="javascript" src="js/vod.js"></script>
+<title>VOD</title>
+</head>
+
+<body onload="init();" bgcolor="transparent">
+<!-- 影片列表页面 -->
+<div id="pvrMain">
+	<!-- 图标，LOGO，时间，主选项 -->
+	<div id="pvrHead">
+        <!-- 图标 -->
+    	<div id="pageIcon">VOD</div>
+        <!-- 时间 -->
+        <div id="pageTimeShow">17:17  19/01</div>
+        <!-- LOGO -->
+        <div id="pageLogo"></div>
+        <!-- 列表类型 -->
+        <div id="listTypeBg">
+        	<div id="leftButton"></div><div id="RightButton"></div>
+            <div id="listTypeBox">
+                <div id="listTypeFocus"></div>
+                <div id="listTypeFocusMove"></div>
+                <div id="listTypeElement0" style="left:  1px;">ALL</div>
+                <div id="listTypeElement1" style="left:273px;">CARTOON</div>
+                <div id="listTypeElement2" style="left:545px;">COMEDY</div>
+                <div id="listTypeElement3" style="left:817px;">ACTION</div>
+            </div>
+        </div>
+    </div>
+    <div id="vodBody">
+    	<!-- 左右按键提示 -->
+        <div id="buttonMovieLeft"></div><div id="buttonMovieRight"></div>
+        <div id="buttonMovieLeftOff"></div><div id="buttonMovieRightOff"></div>
+        <!-- 影片缩略图 -->
+        <div id="movieBody">
+        	<div id="addMovieDiv">
+            	
+            </div>
+        	<div id="leftGradient" takin_layer_alone="true"></div><div id="rightGradient" takin_layer_alone="true"></div>
+            <div id="focusGradientLeft" takin_layer_alone="true"></div><div id="focusGradientRight" style="left:433px;" takin_layer_alone="true"></div>
+        </div>
+        <!-- 影片名称显示 -->
+        <div id="movieTitle">HOW TO TRAIN YOUR DRAGON</div>
+    </div>
+    <!-- 提示信息 -->
+    <div id="pvrFoot">
+    	<div id="pageTips">Tips</div>
+        <div id="pageTipsInfo">
+        	<li style="width:140px;">[Ok] Confirm</li>
+            <li style="width:190px;">[Back] Return</li>
+            <!--
+            <li style="width:120px;">Lock</li>
+            <li style="width:120px;">Delete</li>
+            <li style="width:120px;">Favorite</li>
+            <li style="width:120px;">Rename</li>
+            <div class="tipsButton" style="left:250px; background-color:#f00;"></div>
+            <div class="tipsButton" style="left:370px; background-color:#0f0;"></div>
+            <div class="tipsButton" style="left:490px; background-color:#ff0;"></div>
+            <div class="tipsButton" style="left:610px; background-color:#0064ff;"></div>
+        	-->
+        </div>
+    </div>
+    <!-- 影片信息页面 -->
+    <div id="vodInfoPage">
+    	<!-- infoLine -->
+        <div id="infoLine"></div>
+        <!-- movieInfoImg -->
+        <div id="movieInfoImg"></div>
+        <!-- 文字信息区域 -->
+        <div id="allInfoDiv">
+        	<!-- info title -->
+        	<div id="movieInfoTitle"></div>
+            <!-- info value -->
+            <div id="movieInfoValue"></div><div id="movieInfoArea"></div>
+            <!-- info text line -->
+            <div id="movieInfoLine1" class="movieTextLine"></div>
+            <!-- info movie genre-->
+            <div id="movieInfoGenre" class="infoStyle"></div>
+            <!-- info movie release in -->
+            <div id="movieInfoRelease" class="infoStyle" style="left:424px;"></div>
+            <!-- info movie time length -->
+            <div id="movieInfoTimeLength" class="infoStyle" style="top:112px; width:400px;"></div>
+            <!-- info movie director -->
+            <div id="movieInfoDirector" class="infoStyle" style="top:142px; width:780px;"></div>
+            <!-- info movie star -->
+            <div id="movieInfoStar" class="infoStyle" style="top:172px; width:797px;"></div>
+            <!-- info text line -->
+            <div id="movieInfoLine2" class="movieTextLine" style="top:210px;"></div>
+            <!-- info movie info -->
+            <div id="movieInfoTextTitle" class="infoStyle" style="top:221px; font-size:24px; font-weight:bolder;">Movie information:</div>
+            <!-- info movie text -->
+            <div id="movieInfoText" class="infoStyle" style="top:252px; width:776px; height:120px; line-height:30px; overflow:hidden;"></div>
+            <!-- info movie buy button -->
+            <div id="infoButton0" class="infoButton" style="left:0px;">Buy Now</div>
+            <!-- info movie play button -->
+            <div id="infoButton1" class="infoButton" style="left:243px;">Play</div>
+            <!-- info movie back button -->
+            <div id="infoButton2" class="infoButton" style="left:486px;">Cancel</div>
+            <!-- buy movie tips -->
+            <div id="buyMovieTips">
+            	<div id="textTips">Are you sure pay for it ?</div>
+                <div id="buyButton0">Yes</div><div id="buyButton1" style="left:210px;">No</div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 播放控制 -->
+<div id="playFullScreen">
+	<!-- 播放状态图标 -->
+	<div id="playStatusIcon"></div>
+    <!-- 播放状态条 -->
+    <div id="playStatusBar">
+    	<!-- 播放状态条半透背景 -->
+    	<div id="playBarBg"></div>
+        <!-- 提示文字 -->
+        <div id="playJinduTips" class="tipsJinduBar">Process</div>
+        <!-- 提示图标 -->
+        <div id="playJinduFlag"></div>
+        <!-- 播放进度条背景 -->
+        <div id="playJinduBarBg" class="playJinduBarBg" style="width:610px;"></div>
+    	<!-- 播放进度条 -->
+    	<div id="playJinduBar">
+        	<div id="seekBar">
+                <div id="seekValueBg"></div>
+                <div id="seekBarText">
+                    <li id="seekText0">0</li>
+                    <li id="seekText1">1</li>
+                    <li style="width:5px;">:</li>
+                    <li id="seekText2">2</li>
+                    <li id="seekText3">3</li>
+                    <li style="width:5px;">:</li>
+                    <li id="seekText4">4</li>
+                    <li id="seekText5">5</li>
+                </div>
+            </div>
+        </div>
+        <!-- 播放时间 -->
+        <div id="playTimeShow" class="playTimeText" style="left:830px; width:200px;"></div>
+        <!--
+        <div id="currentTimeValue" style="left:147px; text-align:center;"></div>
+        <div id="totalTimeValue" style="left:434px; text-align:center;"></div>
+        -->
+    </div>
+    <!-- 音量控制部分 -->
+    <div id="volumeDiv">
+    	<div id="volumeBg"></div>
+        <div id="volumeTips">Volume</div>
+        <div id="volumeFlag"></div>
+        <div id="volumeBarBg"><div id="volumeBar"></div></div>
+        <div id="volumeText">100/100</div>
+    </div>
+    <!-- 静音图标 -->
+    <div id="muteIcon">
+    	<div id="muteIconBg"></div>
+        <div id="muteIconImg"></div>
+    </div>
+    <!-- 声道信息 -->
+    <div id="stereoDiv">
+    	<div id="stereoBg"></div>
+        <div id="stereoText"></div>
+    </div>
+    <!-- 提示信息 -->
+    <div id="vodTips" style="left:450px; top:290px;">
+    	<div id="tipsText">Input error !</div>
+        <div id="tipsButton" style="left:137px; background-image:-webkit-gradient(radial, 50% -10%, 15, 50% -10%, 110, from(#056be9), to(#011f64)); border-color:#1064c2;">Return</div>
+    </div>
+</div>
+</body>
+</html>

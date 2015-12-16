@@ -1,0 +1,403 @@
+@charset "utf-8";
+/* CSS Document */
+/********body界面定位*********/
+#bodyBack{
+	position:absolute; overflow:hidden;
+	top:0px; left:0px; width:1280px; height:720px;
+}
+#blackBack{
+	position:absolute;
+	top:0px; left:0px; width:1280px; height:720px;
+	background-color:#000000;
+}
+/********界面和公司log显示*********/
+#pageTitle {
+	position:absolute;
+	top:40px; left:79px; width:66px; height:72px;
+	background:url(../image/cssIcon.png) no-repeat;
+}
+#titleText{
+	position:absolute;
+	top:57px; left:162px; width:200px; height:36px;
+	font-size:36px; font-weight:900;
+	line-height:60px; color:#999;
+}
+#logoShow {
+	position:absolute;
+	top:29px; left:1122px; width:65px; height:74px;
+	background-image:url(../image/logoImage.png);
+}
+
+#timeShow {
+	position:absolute;
+	top:55px; left:960px; width:140px; height:40px;
+	color:#FFF; text-align:right; font-size:24px;
+	font-weight:600; line-height:40px;
+}
+
+/*导航及其里的内容定义*/
+#chooseModel {
+	margin:0 0 0 0;	position:absolute;
+	top:116px; left:64px; width:186px; height:58px;
+	border-width: 0px;border-style: solid; border-radius:5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#414141), to(#1a1a1a));
+}
+#chooseModel_text{
+	position:absolute;
+	top:116px; left:64px; width:186px; height:58px; 
+	font-size:28px; font-weight:bolder; color:#9c9c9c;
+	text-align:center; line-height:58px;
+}
+/************导航中箭头方向定位**************/
+#upNavig{
+	margin:0 0 0 0;	position:absolute;
+	top:116px; left:255px; width:961px; height:58px;
+	border-width: 0px;border-style: solid; border-radius:5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#414141), to(#1a1a1a));
+}
+#leftLt{
+	margin:0 0 0 0;	position:absolute;
+	left:14px; top:20px; 
+	border-color: transparent #fff transparent transparent;
+	border-style: solid; border-width: 9px 10px 9px 0px;
+	width: 0;height: 0;opacity:0;
+	-webkit-transition-duration:.6s;
+}
+#rightGt{
+	margin:0 0 0 0;	position:absolute;
+	left:940px;	top:20px;
+	border-color: transparent transparent transparent #fff;
+	border-style: solid; border-width: 9px 0px 9px 10px;
+	width: 0; height: 0;
+	-webkit-transition-duration:.6s;
+}
+/************导航中黑色底板的定位**************/
+#upItem{
+	margin:0 0 0 0;	position:absolute;
+	left:33px; top:6px; width:897px; height:46px;
+	overflow:hidden;
+	-webkit-border-radius:5px;
+	background-color:#000;
+}
+/************导航中焦点**************/
+#focusBar{
+	position:absolute;
+	left:1px; top:1px; width:223px;	height:44px;
+	/*background:-webkit-gradient(radial, 113 20, 65, 113 23, 130,from(#848484), to(#414141));*//* from(#056ded), to(#000f37));*/
+	background:-webkit-gradient(radial, 113 20, 65, 113 23, 130, from(#056ded), to(#000f37));
+	-webkit-transition-property:left;
+	-webkit-transition-duration:.5s;
+	-webkit-border-radius:5px;
+}
+/************导航中菜单定位**************/
+#item_text{
+	position:absolute;
+	left:288px; top:122px; width:896px; height:46px;
+	overflow:hidden;
+}
+#item0,#item1,#item2,#item3,#item4,#item5{
+	position:absolute; line-height:46px; vertical-align:middle;
+	height:46px; width:223px;	font-size:24px;	color:#b2b2b2;
+	-webkit-transition-property:left,right; text-align:center;
+	-webkit-transition-property:left;
+	-webkit-transition-duration:.6s;
+}
+#item0{color:#ffffff;}
+
+/************导航菜单内容显示**************/
+#setAlubm{
+	position:absolute;
+	top:5px;
+	left: 190px;
+	height:40px;
+	width:390px;
+	overflow:hidden;
+	color:#ffffff; line-height:30px; vertical-align:middle; text-align:center; font-size:24px;
+	border-width: 0px;border-style: solid; border-radius:5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#292929), to(#1e1e1e));
+}
+#photoLeftSign {
+	position:absolute;
+	left:14px;
+	top:11px;
+	border-color: transparent #fff transparent transparent;
+	border-style: solid;
+	border-width: 9px 10px 9px 0px;
+	width: 0;
+	height: 0;
+}
+#photoRightSign {
+	position:absolute;
+	left:366px;
+	top:11px;
+	border-color: transparent transparent transparent #fff;
+	border-style: solid;
+	border-width: 9px 0px 9px 10px;
+	width: 0;
+	height: 0;
+}
+#fontFrame {
+	position:absolute;
+	top:2px;
+	left:36px;
+	width:314px;
+	height:32px;
+	font-size:24px;
+	line-height:32px;
+	border:2px #000 solid;
+	background:-webkit-gradient(radial, 157 16, 65, 157 16, 210, from(#848484), to(#414141));
+}
+#div00,#div01,#div02,#div03,#div04{
+	position:absolute; top: 150px;
+}
+#div10,#div11,#div12,#div13,#div14{
+	position:absolute; top: 350px;
+}
+.pic_size{
+	width:120px;
+	height:90px;
+}
+#showBig cite {
+    background: #111; position: absolute;
+    bottom: 0;text-align:center; vertical-align:middle; line-height:35px;
+    opacity:.55; color: #fff; left: 0; width: 400px; height:35px;
+    border-top: 1px solid #999;
+}
+#bigPic{
+	-webkit-transition-property:width,height; 
+}
+#showBig{
+	position:absolute;overflow:hidden;
+	left:645px; top:35px; width:400px; height:300px;
+	background-color:#333; border:7px solid #3f3f3f;
+}
+#imgStyle{
+	position:absolute; overflow:hidden;
+	width:400px; height:300px; top:0px; left:0px;
+}
+#focusImg {
+    position:absolute;
+	/*-webkit-box-shadow: 0px 0px 30px #4d70e3;*/
+    border:3px solid #548ef8;
+    background:transparent;
+	left:2px; top:117px;
+    width:120px; height:90px;
+	-webkit-transition-property:left, top;
+   -webkit-transition-duration:.3s;
+   visibility:hidden;
+}
+.middle{
+	position:absolute;
+	margin:0;
+	left:108px;
+	top:-460px;
+	width:1080px;
+	height:453px; overflow:hidden;
+}
+#middle0{top:189px;visibility:visible;}
+#hiddFocusMoveImg {
+	margin:0;
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:1080px;
+	height:453px;
+	background:#000;
+	z-index:100;
+	opacity:0.7;
+}
+/************焦点内容**************/
+#linkPage0{
+	position:absolute;
+	height:46px;left: 374px;top:56px; 
+	width:370px; font-weight:bolder; font-size:24px;
+	color:#929292; text-align:center; line-height:46px; vertical-align:middle;
+	
+}
+#linkPage00{
+	position:absolute;
+	margin:0px;
+	left: 374px;top:56px; 
+	height:46px;
+	width:370px;
+	-webkit-border-radius:3px;
+	overflow:hidden; border:1px solid #464646;
+	background:-webkit-gradient(linear, left top, left bottom, from(#666666) ,to(#222222));
+}
+#focusButt{
+	position:absolute;
+	top:57px; width:0px; left:562px; height:46px;
+	-webkit-border-radius:3px;
+	background:-webkit-gradient(linear, left top, left bottom, from(#056ce9), to(#001744));
+}
+/************左右焦点定位**************/
+#leftRight{
+	position:absolute;
+	left:200px;
+	top:116px;
+	height:250px;
+	width:700px;
+}
+.leftButton{
+	position:absolute;
+	width:250px;
+	height:46px;
+	-webkit-border-radius:3px;
+	border:1px solid #464646;
+	color:#929292; font-size:24px;
+	line-height:46px;
+	text-align:center;
+	vertical-align:middle;
+}
+#left20,#left21{
+	position:absolute;
+	height:46px;
+	width:250px;
+	border-right:30px solid #464646;
+	border-left:30px solid #464646;
+	-webkit-border-radius:1px;
+	overflow:hidden;
+}
+.d0{
+	position:absolute;
+	border-style: solid;
+	top:156px;
+	width: 0; height: 0; 
+}
+.secFocusBut{
+	position:absolute;
+	width:0px; height:44px;
+	-webkit-border-radius:3px;
+	-webkit-transition-duration:0.3s;
+	background:-webkit-gradient(linear, left top, left bottom, from(#056ce9), to(#001744));
+}
+#messL0,#messL1,#messL2,#messR0,#messR1,#messR2{
+	position:absolute;
+	height:46px;
+	width:250px;
+}
+
+/*******水平菜单特效*********/
+#levelDiv0{
+	position:absolute;
+	top:10px;
+	width:680px;
+	height:340px;
+	left:20px; background:#098745;
+	overflow:hidden;
+}
+#imgdiv0,#imgdiv1,#imgdiv2,#imgdiv3,#imgdiv4,#imgdiv5,#imgdiv6{
+	position:absolute;
+	-webkit-transition-property:scale;
+	-webkit-transition-duration:0.3s;
+}
+/*******左、右遮罩的定义*******/
+#maskLevel0,#maskLevel1{
+	position:absolute;
+	top:150px;
+	width:230px; height:140px;
+}
+#maskLevel0{
+	left:20px;
+	background:-webkit-gradient(linear, left bottom, right bottom, from(#000000), color-stop(0.77,#000000), to(transparent));
+}
+#maskLevel1{
+	left:1100px;
+	background:-webkit-gradient(linear, right bottom, left bottom, from(#000000), color-stop(0.82,#000000), to(transparent));
+}
+
+#levelMenuFocus {
+    position:absolute;
+	-webkit-box-shadow: 0px 0px 50px #4d70e3;
+    border:3px solid #548ef8;
+    background:transparent;
+	left:597px; top:147px;
+    width:140px; height:140px;
+	-webkit-transition-property:left;
+   -webkit-transition-duration:.3s;
+   visibility:hidden;
+}
+
+/************垂直菜单定义**************/
+.vmenu{
+	position:absolute;
+	left:404px;
+	width:300px;
+	height:400px;
+	overflow:hidden;
+	color:#b2b2b2; font-size:24px; text-align:center;
+	-webkit-transition-duration:.5s;
+	-webkit-transition-property:top;
+}
+#focusMenu{
+	position:absolute;
+	left:404px; top:37px;
+	width:300px; height:40px;
+	-webkit-transition-duration:.3s;
+	-webkit-transition-property:top;
+	border:1px solid #929292;
+	background:-webkit-gradient(linear, left top, left bottom, from(#7D7D7D),color-stop(0.5,#333333), color-stop(0.5,#111111),to(#323232));
+}
+#maskVertical0,#maskVertical1{
+	position:absolute;
+	top:12px;
+	left:370px;
+	width:350px;
+}
+#maskVertical0{
+	top:0px; height:45px;
+	background:-webkit-gradient(linear, left top, left bottom, from(#000000),color-stop(0.1,#000000), to(transparent));
+}
+#maskVertical1{
+	top:330px; height:124px;
+	background:-webkit-gradient(linear, left bottom, left top, from(#000000), color-stop(0.67,#000000), to(transparent));
+}
+
+/************acid测试页面内容**************/
+.acidList{
+	position:absolute;font-size:24px;
+	left:330px; width:450px; height:34px;
+	line-height:34px; vertical-align:middle;
+}
+.acidList u{
+	font-size:24px;
+	color:#FFFFFF;
+	-webkit-transition-duration:.3s;
+	-webkit-transition-property:fontSize;;
+}
+/************back条**************/
+#backBar {
+	margin:0 0 0 0;
+	position:absolute;
+	left:64px;
+	top:648px;
+	width:1152px;
+	height:44px;
+	background-color: #181818;
+	border-width: 0px;border-style: solid; border-radius:5px;
+}
+#backBar0 {
+	margin:0 0 0 0;
+	position:absolute;
+	left:64px;
+	top:648px;
+	width:1152px;
+	height:44px;
+	font-size:24px;
+	font-weight:600;
+	color:#808080;
+	line-height:44px;
+}
+#tipsImage {
+	margin:0 0 0 0;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:69px;
+	height:44px;
+	text-align:center;
+	line-height:44px;
+	color:#c58e0a;
+	font-weight:bolder;
+	background-image:url(../image/tips.png);
+}

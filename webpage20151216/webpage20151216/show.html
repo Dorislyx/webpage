@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>show page</title>
+<script language="javascript" src="js/menu.js"></script>
+<script language="javascript" src="js/show_new.js"></script>
+<script language="javascript" src="js/show_sec.js"></script>
+<link href="style/menu.css" rel="stylesheet" charset="utf-8" type="text/css" />
+<link href="style/show.css" rel="stylesheet" charset="utf-8" type="text/css" />
+</head>
+
+<body onload="init()" bgcolor="#000000">
+<div id='blackBack'></div>
+<div id="bodyBack">
+<!--show page 图标-->
+<div id="pageTitle"></div>
+<div id='titleText'>&nbsp;CSS Sample</div>
+<div id="logoShow"></div>
+<div id="timeShow"></div>
+<!--导航条-->
+<div id="chooseModel"></div>
+<div id="chooseModel_text">Effect</div>
+<div id="upNavig">
+    <div id="leftLt"></div><div id="rightGt"></div>
+    <div id="upItem"><div id="focusBar"></div></div>
+</div>
+<div id='item_text'>
+    <div id="item0"></div><div id="item1"></div><div id="item2"></div><div id="item3"></div><div id="item4"></div><div id="item5"></div>
+</div>
+
+<div id="middle0" class="middle">
+<!--	<div id="linkPage00"></div>
+    <div id="focusButt" ></div>
+    <div id='linkPage0'>Link To Time-Zoom page</div>-->
+	<div id="leftRight">
+    	<div id="button00" class="secFocusBut" style="left:161px; top:2px;"></div>
+        <div id="button10" class="secFocusBut" style="left:161px; top:72px;"></div>
+        <div id="button20" class="secFocusBut" style="left:161px; top:142px;"></div>
+        <div id="button01" class="secFocusBut" style="left:412px; top: 2px;"></div>
+        <div id="button11" class="secFocusBut" style="left:412px; top:72px;"></div>
+        <div id="button21" class="secFocusBut" style="left:412px; top:142px;"></div>
+        
+        <div id="left00" class="leftButton" style="left:30px;">focus effection 01</div>
+        <div id="left10" class="leftButton" style="left:30px;top:70px;">focus effection 01</div>
+        <div id="left20" class="leftButton" style="left: 1px;top:140px;">
+        	<div id="messL0" style="top:0px;">message 00</div>
+            <div id="messL1" style="top:46px;">message 01</div>
+            <div id="messL2" style="top:-46px;">message 02</div>
+        </div>
+        <div id="left01" class="leftButton" style="left:410px;">focus effection 02</div>
+        <div id="left11" class="leftButton" style="left:410px; top:70px;">focus effection 02</div>
+        <div id="left21" class="leftButton" style="left:381px; top:140px;">
+        	<div id="messR0" style="left:-250px;" >message 10</div>
+            <div id="messR1" style="left:0px;">message 11</div>
+            <div id="messR2" style="left:250px;">message 12</div>
+        </div>
+        
+    <div style="position:absolute;color:#525252; font-size:24px; left:315px; top:10px; width:70px; height:23px;">&lt;----&gt;</div>
+    <div style="position:absolute;color:#525252; font-size:24px; left:315px; top:80px; width:70px; height:23px;">&lt;----&gt;</div>
+    <div class="d0" style="left: 10px; border-color: transparent #b2b2b2 transparent transparent; border-width: 9px 10px 9px 0px;"></div>
+    <div class="d0" style="left:292px; border-color: transparent transparent transparent #b2b2b2; border-width: 9px 0px 9px 10px;"></div>
+    <div class="d0" style="left:390px; border-color: transparent #b2b2b2 transparent transparent; border-width: 9px 10px 9px 0px;"></div>
+    <div class="d0" style="left:672px; border-color: transparent transparent transparent #b2b2b2; border-width: 9px 0px 9px 10px;"></div>
+	</div>
+</div>
+
+<div id="middle1" class="middle" >
+	<div id="focusMenu"></div>
+	<div id="vmenu0"  class="vmenu">Wall Street</div>
+    <div id="vmenu1"  class="vmenu">All Good Things</div>
+    <div id="vmenu2"  class="vmenu">Going the Distance</div>
+    <div id="vmenu3"  class="vmenu">Due Date</div>
+    <div id="vmenu4"  class="vmenu">Michael Douglas</div>
+    <div id="vmenu5"  class="vmenu">The Headlines</div>
+    <div id="vmenu6"  class="vmenu">New Female Neighbor</div>
+    <div id="vmenu7"  class="vmenu">Pierre Garand</div>
+    <div id="vmenu8"  class="vmenu">Hereafter</div>
+    <div id="vmenu9"  class="vmenu">Let Me In The Part</div>
+    <div id="vmenu10" class="vmenu">Wall Street</div>
+    <div id="vmenu11" class="vmenu">Money Never Sleeps</div>
+    <div id="vmenu12" class="vmenu">Bloody Murders</div>
+    <div id="vmenu13" class="vmenu">Small Town</div>
+    <div id="vmenu14" class="vmenu">Enrique Iglesias</div>
+    <div id="maskVertical0"></div>
+    <div id="maskVertical1"></div>
+</div>
+
+<div id="middle2" class="middle">
+    <div id="imgDiv0" style="position:absolute; top:40px; left:85px; width:200px; height:200px; z-index:4; -webkit-transform:scale(0.4); -webkit-transition-duration:1s;"><img src="img/01.jpg" width="200" height="200" /></div>
+    <div id="imgDiv1" style="position:absolute; top:110px; left:165px; width:200px; height:200px; z-index:6; -webkit-transform:scale(0.6); -webkit-transition-duration:1s;"><img src="img/02.jpg" width="200" height="200" /></div>
+    <div id="imgDiv2" style="position:absolute; top:180px; left:290px; width:200px; height:200px; z-index:8; -webkit-transform:scale(0.8); -webkit-transition-duration:1s;"><img src="img/03.jpg" width="200" height="200" /></div>
+    <div id="imgDiv3" style="position:absolute; top:190px; left:500px; width:200px; height:200px; z-index:10; -webkit-transform:scale(1.0); -webkit-transition-duration:1s;"><img src="img/04.jpg" width="200" height="200" /></div>
+    <div id="imgDiv4" style="position:absolute; top:180px; left:710px; width:200px; height:200px; z-index:8; -webkit-transform:scale(0.8); -webkit-transition-duration:1s;"><img src="img/05.jpg" width="200" height="200" /></div>
+    <div id="imgDiv5" style="position:absolute; top:110px; left:835px; width:200px; height:200px; z-index:6; -webkit-transform:scale(0.6); -webkit-transition-duration:1s;"><img src="img/06.jpg" width="200" height="200" /></div>
+    <div id="imgDiv6" style="position:absolute; top:40px; left:915px; width:200px; height:200px; z-index:4; -webkit-transform:scale(0.4); -webkit-transition-duration:1s;"><img src="img/07.jpg" width="200" height="200" /></div>
+    <div id="imgDiv7" style="position:absolute; width:200px; height:200px; -webkit-transform:scale(0.4); -webkit-transition-duration:1s; opacity:0.0;"><img src="img/08.jpg" width="200" height="200" /></div>
+    <div id="imgDiv8" style="position:absolute; width:200px; height:200px; -webkit-transform:scale(0.4); -webkit-transition-duration:1s; opacity:0.0;"><img src="img/09.jpg" width="200" height="200" /></div>
+    <div id="imgDiv9" style="position:absolute; width:200px; height:200px; -webkit-transform:scale(0.4); -webkit-transition-duration:1s; opacity:0.0;"><img src="img/010.jpg" width="200" height="200" /></div>
+    <div id="imgDiv10" style="position:absolute; width:200px; height:200px; -webkit-transform:scale(0.4); -webkit-transition-duration:1s; opacity:0.0;"><img src="img/011.jpg" width="200" height="200" /></div>
+	<div id="hiddFocusMoveImg"></div>
+</div>
+
+<div id="middle3" class="middle">
+    <div style="position:absolute; left:5px; top:30px; width:600px; height:100px;">
+        <div style="position:absolute;color:#b2b2b2; font-size:22px; height:40px; top:10px; width:190px; line-height:40px; font-weight:bolder;" >Special Effection:</div>
+        <div id="setAlubm">
+            <div id="photoLeftSign"></div>
+            <div id="photoRightSign"></div>
+            <div id="fontFrame">Fade In - Out</div>
+        </div>
+    </div>
+    <div id="div00" style="left:  5px; top:120px;"><img src="img/pic1.jpg" id="pic00" class="pic_size" /></div>
+    <div id="div01" style="left:157px; top:120px;"><img src="img/pic2.jpg" id="pic01" class="pic_size" /></div>
+    <div id="div02" style="left:309px; top:120px;"><img src="img/pic3.jpg" id="pic02" class="pic_size" /></div>
+    <div id="div03" style="left:461px; top:120px;"><img src="img/pic4.jpg" id="pic03" class="pic_size" /></div>
+    <div id="div10" style="left:  5px; top:260px;"><img src="img/pic6.jpg" id="pic10" class="pic_size" /></div>
+    <div id="div11" style="left:157px; top:260px;"><img src="img/pic7.jpg" id="pic11" class="pic_size" /></div>
+    <div id="div12" style="left:309px; top:260px;"><img src="img/pic8.jpg" id="pic12" class="pic_size" /></div>
+    <div id="div13" style="left:461px; top:260px;"><img src="img/pic9.jpg" id="pic13" class="pic_size" /></div>
+   <div id="showBig" >
+	   <div id="imgStyle" ><img src="img/pic1.jpg" id='bigPic' width="400" height="300" /></div>
+    	<cite id="citeText">Amy's Picture</cite>
+   </div>
+   <div id="focusImg"></div>
+</div>
+
+<div id="middle4" class="middle">
+	<div class="acidList" style='top:86px;'><font color='#777777'>&gt&gt acid test 1:</font>&nbsp;&nbsp;&nbsp;<u id='acid0'>http://acid1.acidtests.org</u></div>
+	<div class="acidList" style='top:146px;'><font color='#777777'>&gt&gt acid test 2:</font>&nbsp;&nbsp;&nbsp;<u id='acid1'>http://acid2.acidtests.org</u></div>
+	<div class="acidList" style='top:206px;'><font color='#777777'>&gt&gt acid test 3:</font>&nbsp;&nbsp;&nbsp;<u id='acid2'>http://acid3.acidtests.org</u></div>
+</div>
+
+<div id="middle5" class="middle">
+    <div id='linkPage0' style="top:120px; font-size:24px;">Link To Time-Zoom page</div>
+</div>
+<div id="backBar"></div>
+<div id="backBar0">
+    <div id="tipsImage">Tips</div>
+</div>    
+</div>
+
+</body>
+</html>

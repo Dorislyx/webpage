@@ -1,0 +1,159 @@
+﻿#blackBack{
+	position:absolute;
+	top:0px; left:0px; width:1280px; height:720px;
+	background-color:#000000;
+}
+
+#bodyBack{position:absolute;width:1280px; height:720px; overflow:hidden;}
+#pageTitle {
+	position:absolute;
+	top:29px; left:79px; width:66px; height:72px;
+	background:url(../image/netIcon.png) no-repeat;
+}
+#titleText{
+	position:absolute;
+	top:57px; left:162px; width:300px; height:36px;
+	font-size:36px; font-weight:900;
+	color:#999;
+}
+
+#logoShow {
+	position:absolute;
+	top:29px; left:1122px; width:65px; height:74px;
+	background-image:url(../image/logoImage.png);
+}
+
+#timeShow {
+	position:absolute;
+	top:55px; left:960px; width:140px; height:40px;
+	color:#FFF; text-align:right; font-size:24px;
+	font-weight:600; line-height:40px;
+}
+/**************下面back条的定义*******************/
+#downItem{
+	position:absolute; z-index:20;
+	height:44px; width:1152px; left: 64px; top: 648px;
+	-webkit-border-radius:5px; background-color:#181818;
+}
+#downItem0{
+	position:absolute;z-index:22;
+	height:44px; width:1152px; left: 64px; top: 648px;
+}
+#downImg{	
+	position:absolute;
+	height:44px; width:69px; color:#c58e0a;
+	text-align:center; vertical-align:middle;
+	line-height:44px; font-size:24px; font-weight:bolder;
+	background:url(../image/tips.png);
+}
+#backBack,#upBack,#downBack,#leftBack,#rightBack{
+	position:absolute;
+	width:80px; height:44px;
+}
+#backBack{left:85px;}
+#upBack{left:175px;}
+#downBack{left:240px;}
+#leftBack{left:330px;}
+#rightBack{left:400px;}
+#back_iocn,#up_iocn,#down_iocn,#left_iocn,#right_iocn{
+	position:absolute; width:0px;
+	height:0px; top:16px;
+	border-style: solid;
+}
+#back_iocn{ top:19px;
+	color:#646464;
+	border:#646464 solid 4px;
+}
+#up_iocn{ top:17px;
+	border-color: transparent transparent #fff transparent;
+	border-width: 0px 6px 8px 6px;
+}
+#down_iocn{ top:19px;
+	border-color: #fff transparent transparent transparent;
+	border-width: 8px 6px 0px 6px;
+}
+#left_iocn{
+	border-color: transparent #fff transparent transparent;
+	border-width: 6px 8px 6px 0px;
+}
+#right_iocn{
+	border-color: transparent transparent transparent #fff ;
+	border-width: 6px 0px 6px 8px;
+}
+#back_text,#up_text,#down_text,#left_text,#right_text{
+	position:absolute;
+	width:50px; left:15px;
+	height:44px; color:#646464;
+	line-height:44px; font-size:24px; vertical-align:middle;
+}
+/**************输入框定义*******************/
+#upNavig{
+	position:absolute;
+	margin:0 0 0 0;
+	height:58px; width:1151px; left: 65px; top: 116px;
+	-webkit-border-radius:5px;
+	z-index:34;
+	background: -webkit-gradient(linear, left top, left bottom, from(#414141), to(#1a1a1a));
+}
+#upNavig0{
+	position:absolute;
+	height:58px; width:1151px; left: 65px; top: 116px;
+	overflow:hidden;
+	z-index:35;
+}
+#inputText{
+	position:absolute; color:#000000;
+	height:46px; width:938px; left: 141px; top: 6px;
+	overflow:hidden; background-color:#000000;
+	-webkit-border-radius:5px; font-size:22px;
+	line-height:46px; vertical-align:middle; text-align:left;
+}
+
+#leftTitle{
+	position:absolute;
+	line-height:58px;
+	vertical-align:middle;
+	text-align:center;
+	color:#929292;
+	width: 135px; font-size:24px;
+}
+/*
+#focusInput {
+    position:absolute;
+	-webkit-box-shadow: 0px 0px 10px #4d70e3;
+    border:1px solid #548ef8; left:139px; top:4px;
+    background:transparent;
+    height:46px; width:940px; 
+}
+*/
+#arrowssIcon{
+	position:absolute;
+	left:1095px; top:20px; background-color:#555555;
+	width:25px; height:15px;
+}
+#arrowssRight{
+	position:absolute;left:1120px; top:14px; width:0px; height:0px;
+	border-color: transparent transparent transparent #555555 ;
+	border-width: 13px 0px 13px 15px;border-style: solid;
+}
+/**************8宫格定义*******************/
+#listAll{
+	position:absolute;
+	top:188px; left:20px; width:1240px; height:450px;
+}
+#focusImg {
+    position:absolute;
+	/*-webkit-box-shadow: 0px 0px 30px #4d70e3;*/
+    border:3px solid #0066FF; 
+    background:transparent;
+    width:242px; height:169px;
+   -webkit-transition-duration:.2s;
+   opacity:1.0;
+}
+
+.list{
+	position:absolute; overflow:hidden;
+	width:242px; height:169px;
+	opacity:0.7;
+    /*-webkit-transition-duration:.3s;*/
+}

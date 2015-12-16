@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script language='JavaScript' src='js/config.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/common.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/net.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/settings.js' charset='utf-8'></script>
+<script language='JavaScript'>isKeyClock = true;</script>
+<title>settings</title>
+<style type="text/css">
+<!--
+* {margin:0 0 0 0; position:absolute;}
+
+#titleIcon{
+	top:199px;
+	left:172px;
+	width:153px;
+	height:225px;
+}
+
+#pageLine{
+	top:77px;
+	left:369px;
+	width:2px;
+	height:559px;
+}
+
+#projectList{
+	top:187px;
+	left:411px;
+	width:203px;
+	height:175px;
+}
+
+#projectFocus{
+	top:174px;
+	left:398px;
+	width:260px;
+	height:63px;
+	visibility:hidden;
+}
+
+#projectText{
+	top:187px;
+	left:411px;
+	width:203px;
+	height:175px;
+	color:#e6e6e6;
+	font-size:22px;
+	text-align:center;
+}
+
+#projectSet0, #projectSet1, #projectSet2, #projectSet3 {
+	left:0px;
+	width:203px;
+	height:37px;
+	line-height:32px;
+}
+
+#fileList{
+	top:113px;
+	left:674px;
+	width:444px;
+	height:511px;
+}
+
+#listTitle{
+	top:125px;
+	left:702px;
+	width:230px;
+	height:38px;
+	font-size:24px;
+	color:#e6e6e6;
+}
+
+#setList{
+	top:200px;
+	left:880px;
+	width:173px;
+	height:321px;
+	overflow:hidden;
+}
+
+#setListFocus{
+	top:189px;
+	left:869px;
+	width:195px;
+	height:49px;
+	visibility:hidden;
+}
+
+#setListName{
+	top:200px;
+	left:706px;
+	width:160px;
+	height:321px;
+	font-size:20px;
+	color:#e6e6e6;
+	text-align:right;
+	overflow:hidden;
+}
+
+#listName0, #listName1, #listName2, #listName3, #listName4, #listName5, #listName6{
+	left:0px;
+	width:160px;
+	height:27px;
+	line-height:29px;
+}
+
+#settingValue{
+	top:200px;
+	left:880px;
+	width:147px;
+	height:321px;
+	font-size:18px;
+	color:#000000;
+	text-align:center;
+	overflow:hidden;
+}
+
+#valueList0, #valueList1, #valueList2, #valueList3, #valueList4, #valueList5, #valueList6{
+	left:0px;
+	width:147px;
+	height:27px;
+	line-height:29px;
+	overflow:hidden;
+}
+
+#tipsButton{
+	top:552px;
+	left:674px;
+	width:426px;
+	height:53px;
+	visibility:hidden;
+}
+
+#tipsText{
+	top:552px;
+	left:674px;
+	width:426px;
+	height:53px;
+	font-size:18px;
+	color:#e6e6e6;
+	overflow:hidden;
+	visibility:hidden;
+}
+
+#listTips0, #listTips1, #listTips2{
+	top:17px;
+	width:65px;
+	height:20px;
+	line-height:20px;
+}
+
+#resetFactorySet{
+	top:445px;
+	left:880px;
+	width:173px;
+	height:27px;
+	line-height:24px;
+	font-size:18px;
+	color:#e6e6e6;
+	text-align:center;
+	visibility:hidden;
+	overflow:hidden;
+}
+
+#clearSysImage{
+	top:494px;
+	left:880px;
+	width:173px;
+	height:27px;
+	line-height:24px;
+	font-size:18px;
+	color:#e6e6e6;
+	text-align:center;
+	visibility:hidden;
+	overflow:hidden;
+}
+
+#tipsCheckUpHD{
+	top:0px;
+	left:0px;
+	width:1280px;
+	height:720px;
+	background-color:#000000;
+	opacity:0.7;
+	visibility:hidden;
+}
+
+#tipsCheckUpText{
+	top:270px;
+	left:385px;
+	width:510px;
+	height:181px;
+	color:#e6e6e6;
+	font-size:24px;
+	line-height:40px;
+	text-align:center;
+	overflow:hidden;
+	visibility:hidden;
+}
+-->
+</style>
+</head>
+
+<body bgcolor="#000000" onload="getConfig();">
+<!-- 设置图标 -->
+<div id="titleIcon"></div>
+<!-- 纵向分隔线 -->
+<div id="pageLine"></div>
+<!-- 设置模块图片 -->
+<div id="projectList"></div>
+<!-- 设置模块焦点 -->
+<div id="projectFocus"></div>
+<!-- 设置模块文字列表 -->
+<div id="projectText">
+	<div id="projectSet0" style="top:  0px;"></div>
+    <div id="projectSet1" style="top: 46px;"></div>
+    <div id="projectSet2" style="top: 92px;"></div>
+    <div id="projectSet3" style="top:138px;"></div>
+</div>
+<!-- 设置选项背景图片 -->
+<div id="fileList"></div>
+<!-- 设置列表title -->
+<div id="listTitle"></div>
+<!-- 设置选项列表图片 -->
+<div id="setList"></div>
+<!-- 设置选项列表焦点 -->
+<div id="setListFocus"></div>
+<!-- 设置选项恢复出厂默认值按钮图片 -->
+<div id="resetFactorySet"></div>
+<!-- 设置选项清除系统文件按钮图片 -->
+<div id="clearSysImage"></div>
+<!-- 设置选项名称 -->
+<div id="setListName">
+	<div id="listName0" style="top:  0px;"></div>
+    <div id="listName1" style="top: 49px;"></div>
+    <div id="listName2" style="top: 98px;"></div>
+    <div id="listName3" style="top:147px;"></div>
+    <div id="listName4" style="top:196px;"></div>
+    <div id="listName5" style="top:245px;"></div>
+    <div id="listName6" style="top:294px;"></div>
+</div>
+<!-- 设置选项值 -->
+<div id="settingValue">
+	<div id="valueList0" style="top:  0px;"></div>
+    <div id="valueList1" style="top: 49px;"></div>
+    <div id="valueList2" style="top: 98px;"></div>
+    <div id="valueList3" style="top:147px;"></div>
+    <div id="valueList4" style="top:196px;"></div>
+    <div id="valueList5" style="top:245px;"></div>
+    <div id="valueList6" style="top:294px;"></div>
+</div>
+<!-- 列表提示信息按钮 -->
+<div id="tipsButton"></div>
+<!-- 提示信息 -->
+<div id="tipsText">
+	<div id="listTips0" style="left:48px;"></div>
+    <div id="listTips1" style="left:146px;"></div>
+    <div id="listTips2" style="left:244px;"></div>
+</div>
+<!-- 清理硬盘文件提示信息 -->
+<div id="tipsCheckUpHD">
+</div>
+	<div id="tipsCheckUpText"></div>
+</body>
+</html>

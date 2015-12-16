@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Loading_page</title>
+<style type="text/css">
+*{padding:0px;  margin:0px;}
+#wap{
+	margin:0px;
+	padding:0px;
+	width:1280px;
+	height:720px;
+}
+/******************************* Logo Css ******************************************/
+#logotop{
+	position:absolute;
+	top:141px;
+	left:514px;
+	width:254px;
+	height:296px;
+	//background:url(image/loading_logo.png);
+	opacity:1.0;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+}
+#logobottom{
+	position:absolute;
+	top:437px;
+	left:0px;
+	width:1280px;
+	height:77px;
+	background:url(image/loading_bottom.png);
+	opacity:1.0;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:1s;
+}
+/******************************* Loading Bar Div Css ******************************************/
+#loadingBarDiv{
+	position:absolute;
+	top:598px;
+	left:225px;
+	width:0px;
+	height:42px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#898C8D), to(#3F4141));
+	border-radius:4px;
+}
+/******** Loading Css*******/
+#loadingBarTxt{
+	position:absolute;
+	top:0px;
+	left:16px;
+	height:42px;
+	line-height:42px;
+	font-size:20px;
+	color:#fff;
+}
+/******** Loading bar bg Css *******/
+#loadingBar_bg{
+	position:absolute;
+	top:8px;
+	left:99px;
+}
+#loadingBar_bg ul{
+	padding:0px;
+	margin:0px;
+}
+#loadingBar_bg ul li{
+	position:relative;
+	padding:0px;
+	margin-left:4px;
+	list-style:none;
+	float:left;
+	width:140px;
+	height:27px; 
+	background: -webkit-gradient(linear, left top, left bottom, from(#0E0E0E), to(#282828));
+	border-radius:4px;
+}
+#loadingBar_bg ul li ins{
+	position:absolute;
+	top:1px;
+	left:1px;	
+	padding:0px;
+	margin:0px;
+	list-style:none;
+	float:left;
+	width:0px;
+	height:25px; 
+	//background: -webkit-gradient(linear, left top, left bottom, from(#67CB28), to(#30B000));
+	border-radius:4px;
+}
+/*********Loading Bar text Css********/
+#loadingBar_txt{
+	position:absolute;
+	top:8px;
+	left:103px;
+}
+#loadingBar_txt ul{
+	padding:0px;
+	margin:0px;
+}
+#loadingBar_txt ul li{
+	position:relative;
+	padding:0px;
+	margin-left:4px;
+	list-style:none;
+	float:left;
+	width:140px;
+	height:27px;
+}
+#loadingBar_txt ul li span{
+	position:absolute;
+	top:0px;
+	left:8px;
+	font-size:18px;
+	color:#fff;
+	line-height:27px;
+	width:100px;
+	overflow:hidden;
+}
+#loadingBar_txt ul li img{
+	position:absolute;
+	top:7px;
+	left:112px; 
+	 
+}
+</style>
+<script language="javascript">
+/*********************************************************************/
+/* Function: init                                                    */
+/* Description: init                                	             */
+/* Parameters:                                                       */
+/* Author&Date: biangang  2011-03-08								 */
+/*********************************************************************/ 
+var player = new AVPlayer();
+var ModuletxtArr = new Array("Upgrade","NTP"); 
+var ModuleFunArr = new Array("upgradeFun()","networkFun()"); 
+var ImgArr = new Array();
+ImgArr[0] = "image/loading_ok.png";
+ImgArr[1] = "image/loading_error.png";
+var Total = ModuletxtArr.length; // Total; 
+var greenLen; //bar Progress;
+var totalBuff = 100; //bar total;
+var barLength = 138; //bar Length;
+var Timer_Fun = "";
+function init(){
+	//document.getElementById("logotop").style.opacity = "1.0";
+	//document.getElementById("logobottom").style.opacity = "1.0";
+	showLiFun();
+	setTimeout("gotoUpgrade()",800);
+	return;
+}
+
+var check_status;
+function gotoUpgrade() {
+	check_status = check_update();
+	if (check_status == 1)
+	{
+		LoadModulFun(0);
+	} else {
+		LoadModulFun(0);
+	}
+	return;
+}
+
+/*********************************************************************/
+/* Function: LoadModulFun                                            */
+/* Description: Load Modul                          	             */
+/* Parameters:                                                       */
+/* Author&Date: biangang  2011-03-08								 */
+/*********************************************************************/ 
+var Num = 0;
+function LoadModulFun(e){
+	var percentNum = eval(ModuleFunArr[Num]);
+	player.printf(1, "percentNum=============sssssss============="+percentNum);
+	player.printf(1, "check_update=============check_update============="+check_status);
+	player.printf(1, "percentNum=============Num============="+Num);
+	if (check_status == 0 || check_status == 2) {
+		percentNum = 100;
+	}
+	//var txtArr = txt.split("?"); 
+	//var percentNum = txtArr[0];
+	//var retst = txtArr[1];
+	//if (greenLen == barLength){
+	LoadBarFun(percentNum,Num,0,ModuletxtArr[Num]);
+	if (Num == 0) {
+		if (percentNum == 100 || check_status == 0 || check_status == 2){
+			window.clearTimeout(Timer_Fun); 
+			if (Num+1 < Total) {
+				Num++;
+				setTimeout("LoadModulFun(Num)",800);
+			} else {
+				setTimeout("goto_homepage();",800);
+			}
+		}else{
+			Timer_Fun = setTimeout("LoadModulFun("+Num+")",1000);
+		}
+	}
+	return;
+}
+/*************************************Loading Module Function*************************************************/
+/*********************************************************************/
+/* Function: check_update                                            */
+/* Description: check update                           	             */
+/* Parameters:                                                       */
+/* Author&Date: biangang  2011-03-08								 */
+/*********************************************************************/ 
+function check_update()
+{
+	if (player.Ag_upgrade_getMode() == 0)
+	{
+		if (player.Ag_upgrade_check() == 0)
+			return 1;
+		else if (player.Ag_upgrade_check() == 1)
+			return 2;
+	}
+	return 0;
+}
+
+/*********************************************************************/
+/* Function: upgradeFun                                              */
+/* Description: upgrade                              	             */
+/* Parameters:                                                       */
+/* Author&Date: biangang  2011-03-08								 */
+/*********************************************************************/ 
+function upgradeFun(){
+	var percentNum = player.Ag_upgrade_getUpgradePercent();
+	return percentNum;
+}
+/*********************************************************************/
+/* Function: networkFun                                              */
+/* Description: Load network                           	             */
+/* Parameters:                                                       */
+/* Author&Date: biangang  2011-03-08								 */
+/*********************************************************************/ 
+function networkFun(){
+	var percentNum = player.Ag_time_sycToNTP();
+	return percentNum;
+} 
+/*********************************************************************/
+/* Function: goto_homepage                                           */
+/* Description: open homepage                          	             */
+/* Parameters:                                                       */
+/* Author&Date: biangang  2011-03-08								 */
+/*********************************************************************/ 
+function goto_homepage()
+{	
+	var homepage_url = player.Ag_homePage_get();	
+	location.href = homepage_url;
+	return; 
+}
+
+document.onkeypress = keyEvent; //remote control event
+function keyEvent(e)
+{
+	var keyvalue = e.which;
+	player.printf(1, "get key = " + keyvalue + "\n");
+	switch(keyvalue)
+	{
+		case 1073742392:
+		case 1073742397:
+			setTimeout("LoadBarFun(100, 1, -1, ModuletxtArr[Num]);",500);
+			//document.getElementById("bar_img_0").src = ImgArr[1];
+			//document.getElementById("bar_0").style.background = "-webkit-gradient(linear, left top, left bottom, from(#58689D), to(#465A8B))"; 
+			break;		
+		case 1073742406://ntp success
+			setTimeout("LoadBarFun(100, 1, 0, ModuletxtArr[Num]);",500);
+			if (Num+1 < Total) {
+				Num++;
+				setTimeout("LoadModulFun(Num);",800);
+			} else {
+				setTimeout("goto_homepage();",800);
+			}
+			break;
+		case 1073742407://ntp fail
+			setTimeout("LoadBarFun(100, 1, -1, ModuletxtArr[Num]);",500);
+			if (Num+1 < Total) {
+				Num++;
+				setTimeout("LoadModulFun(Num);",800);
+			} else {
+				setTimeout("goto_homepage();",800);
+			}
+			break;
+		default:
+			break;
+	}
+}
+
+/*********************************************************************/
+/* Function: LoadBarFun                                              */
+/* Description: Loading Bar                           	             */
+/* Parameters:                                                       */
+/* Author&Date: biangang  2011-03-08								 */
+/*********************************************************************/ 
+function LoadBarFun(percentNum, ID, retst, bartxt){
+	var percent = percentNum;//Progress;
+	greenLen = Math.round((percent*barLength)/totalBuff); 
+	document.getElementById("bar_"+ID).style.width = greenLen + "px"; 
+	//document.getElementById("bar_txt_"+ID).innerHTML = bartxt;
+	document.getElementById("bar_"+ID).style.background = "-webkit-gradient(linear, left top, left bottom, from(#4395D0), to(#0069B8))";
+	if (percentNum == 100){
+		var ret = retst; // 0 is ok , other is failed;
+		if(ret == 0){
+			document.getElementById("bar_img_"+ID).src = ImgArr[0]; 
+			document.getElementById("bar_"+ID).style.background = "-webkit-gradient(linear, left top, left bottom, from(#67CB28), to(#30B000))";
+		}else{
+			document.getElementById("bar_img_"+ID).src = ImgArr[1];
+			document.getElementById("bar_"+ID).style.background = "-webkit-gradient(linear, left top, left bottom, from(#58689D), to(#465A8B))"; 
+		}
+	}  		
+	return;
+}
+/*********************************************************************/
+/* Function: showLiFun                                               */
+/* Description: show  Bar                             	             */
+/* Parameters:                                                       */
+/* Author&Date: biangang  2011-03-08								 */
+/*********************************************************************/ 
+function showLiFun(){
+	for(var i = 0; i< Total; i++){ 
+		document.getElementById("loadingBarul").innerHTML += "<li id = bar_bg_" +i+"><ins id=bar_" +i+"></ins></li>"; 
+		document.getElementById("loadingBartxtul").innerHTML += "<li><span id=bar_txt_"+i+"></span><img id =bar_img_"+i+" border = '0' /></li>"; 
+		document.getElementById("bar_txt_"+i).innerHTML = ModuletxtArr[i]; 
+	}
+	document.getElementById("loadingBarTxt").innerHTML = "Loading";
+	if(Total>=7){
+		Total = 7;
+	}
+	var loadingDiv = 99+(144*Total)+12;
+	var loadingDivleft = parseInt((1280-loadingDiv)/2);
+	document.getElementById("loadingBarDiv").style.width = loadingDiv + "px";
+	document.getElementById("loadingBarDiv").style.left = loadingDivleft + "px";
+	return;
+}
+</script>
+</head>
+<body bgcolor="#000" onload="setTimeout('init()',1000)">
+<div id="wap">
+ <div id="logotop"><img src="image/loading_logo.png" /></div>
+ <div id="logobottom"></div>
+ <!-- Bar -->
+ <div id="loadingBarDiv">
+   <div id="loadingBarTxt"></div>
+   <div id="loadingBar_bg">
+     <ul id="loadingBarul">  
+     </ul>
+  </div> 
+  <!--- Text -->
+   <div id="loadingBar_txt">
+     <ul id="loadingBartxtul"> 
+     </ul>
+  </div>
+ </div>
+</div>
+</body>
+</html>

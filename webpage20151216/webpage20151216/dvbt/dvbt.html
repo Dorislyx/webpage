@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="page-view-size" content="1280*720" />
+<title>DVB</title>
+<script language="javascript" src="js/config.js"></script>
+<script language="javascript" src="js/dvb.js"></script>
+<style type="text/css">
+*{padding:0;margin:0;}
+.main{
+	position:absolute;
+	top:50%;
+	left:50%; 
+	background:#000; 
+	border-radius:6px;
+	border:2px #666 solid;
+	overflow:hidden; 
+	display:none;
+}
+.main div,.tips{
+	position:absolute;
+	color:#fff;
+	font-size:20px;
+	font-weight:bold; 
+}
+/***************************** Channel Number  ************************************/
+#ChannenlNumDiv{
+	position:absolute;
+	top:40px;
+	left:45px;
+	color:#0363DC;
+	font-size:78px;
+	font-weight:bolder;
+	width:150px;
+	text-align:left;
+	-webkit-text-fill-color: #fff;
+	-webkit-text-stroke-color: #10A8FF;
+	-webkit-text-stroke-width: 1px;
+}
+/******************************** Dvb search and CA Info ***********************************/
+.dvb_DivTitle{
+	top:78px;
+	left:60px;
+	width:300px;
+	height:201px; 
+}
+.bg_title{
+	top:20px; 
+	left:25px; 
+	width:200px;
+	color:#ffffff;
+	font-size:22px;
+	width:300px;
+} 
+.dvb_DivTxt_bg input,select{
+	width:200px;
+} 
+.dvb_DivTitle div{ 
+	top:0px;
+	left:20px;
+	text-align:left;
+	font-size:22px;
+	color:#b2b2b2;
+	width:172px;
+	line-height:40px;
+	white-space: nowrap;
+	word-break: keep-all;
+}
+#dvbSearch{
+	margin:-160px 0 0 -250px;
+	width:500px;
+	height:320px;
+}
+#CAMenu{
+	margin:-310px 0 0 -350px; 
+	width:700px; 
+	height:620px;
+}
+.Ca_font{
+	font-size:18px;
+}
+.CA_DivTxt input[type='text']{
+	width:340px;
+}    
+.dvb_DivTxt_bg{
+	top: 88px;
+	left: 225px;
+	width: 225px;
+	height: 192px;
+	text-align: center;
+	font-size: 22px;
+	color: #b2b2b2; 
+} 
+#btnSearch{ 
+	width:80px;
+	height:30px;
+	font-style:18px;
+}  
+/******************************** Tips ***********************************/
+.tips{
+	top:50%;
+	left:50%;
+	margin:-110px 0 0 -260px;
+	width:520px;
+	height:220px;
+	line-height:65px;
+	padding-top:20px;
+	text-align:center;
+	background:#000;
+	border-radius:6px;
+	border:2px #666 solid;
+	display:none;
+}
+.tips input{
+	width:80px;
+}
+.tips #pinCodeTitle{
+	background:none; 
+	border:none; 
+	width:260px;
+	color:#ffffff;
+	font-size:20px;
+} /************************************ mute Ico *************************************/
+#MuteDiv{
+	position:absolute;
+	top:65px;
+	right:80px;
+	width:31px;
+	height:28px;
+	background:url(images/vol.png) no-repeat;
+	display:none;    
+}
+/****************************************** Vol ****************************************************/
+#volumeDiv{
+	margin:0;
+	position:absolute;
+	top:578px;
+	left:50%;
+	margin-left:-260px;
+	width:520px;
+	height:50px; 
+	overflow:hidden;
+	background:#063; 
+	border-radius:5px;
+	display:none;
+}
+#volumeBg {
+	margin:0;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:520px;
+	height:50px;
+	border-radius:5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#404040), to(#000000));
+	opacity:0.9;	 
+} 
+
+#volumeFlag {
+	margin:0;
+	position:absolute;
+	top:12px;
+	left:15px;
+	width:31px;
+	height:28px;
+	background-image:url(images/vol0.png);
+}
+
+#volumeBarBg {
+	margin:0;
+	position:absolute;
+	top:21px;
+	left:50px;
+	width:372px;
+	height:8px;
+	border-radius:8px;
+	border:1px solid #4d4d4d;
+	background-color:#000;
+}
+
+#volumeBar {
+	margin:0;
+	position:absolute;
+	top:1px;
+	left:1px;
+	width:70px;
+	height:6px;
+	border-radius:4px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#a5fd77), to(#409f0e));
+}
+
+#volumeText {
+	margin:0;
+	position:absolute;
+	top:0px;
+	left:410px;
+	width:100px;
+	height:50px;
+	font-size:20px;
+	font-weight:bolder;
+	color:#a6a6a6;
+	text-align:right;
+	line-height:50px;
+}
+</style>
+</head>
+
+<body bgcolor="transparent" onload="init()">
+<!-- channel number div -->
+<div id="ChannenlNumDiv"></div>
+ 
+<!-- Mute Div -->
+<div id="MuteDiv"></div> 
+
+
+<!--------带确认取消按钮提示--------->
+<div id="tipsBtn" class="tips"> 
+	<div id="tipsTxtBtn" style="font-size:22px;"></div>
+    <div> 
+        <input type="button" onclick="confirmFun()" value="Confirm" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="button" onclick="cancelFun()" value="Cancel" />
+    </div>
+</div>
+
+<!--------带确认按钮提示--------->
+<!--<div id="tipsRegBtn" class="tips"> 
+	<div id="tipsRegTxt" style="font-size:22px;"></div>
+   <div> 
+        <input id="regClose" type="button" onclick="tipsRegShow()" value="Close" /> 
+    </div>
+</div>-->
+<!--------纯文字提示--------->
+<div id="tipsTxtDiv" class="tips" style="line-height:150px;"> 
+	<div id="tipsTxt" style="font-size:22px;"></div>
+</div>
+<!--------提示输入Pin-code--------->
+<div id="tipspcord" class="tips">
+	<div id="pincodetxt"></div> 
+	<div>
+        <input id="pinCodeTitle" type="text" value="" style="width:290px;" disabled />
+        <input id="pinCodeInput" type="password" value="" maxlength="4"  style="width:50px;" />
+        &nbsp;&nbsp;
+        <input type="button" onclick="editPingCord()" value="Confirm" />
+    </div>
+</div> 
+<!--DVB搜台DIV-->
+<div id="dvbSearch" class="main">
+    <div class="bg_title">Scan Channel</div>
+    <!-------------Dvb Text ------------------->
+    <div class="dvb_DivTitle">
+        <div style="position:absolute;top:0px;">Frequency</div>
+        <div style="position:absolute;top:49px;">Symborate</div>
+        <div style="position:absolute;top:98px;">QAM Model</div> 
+    </div>  
+    <!------------DVB Input ------------------>
+    <div class="dvb_DivTxt_bg">
+        <div class="dvb_DivTxt" style="top:0px;">
+            <input id="freqInput" type="text" value="" maxlength="20" />
+        </div>
+        <div class="dvb_DivTxt" style="top:49px;">
+            <input id="symborateInput" type="text" value="" maxlength="20"/>
+        </div>
+        <div class="dvb_DivTxt" style="top:98px; left:-10px;">
+            <select id="qamInput">
+                <option value="16">16QAM</option>
+                <option value="32">32QAM</option>
+                <option value="64" selected="selected">64QAM</option>
+                <option value="128">128QAM</option>
+                <option value="256">256QAM</option> 
+            </select>
+        </div>  
+    </div> 
+    <div style="top:240px; left:204px;">
+        <input id="btnSearch" type="button" onclick="searchDvb()" value="Search">
+    </div>  
+</div>
+<!--CA菜单-->
+<div id="CAMenu" class="main">
+    <div class="bg_title">CA Info</div>  
+    <div class="dvb_DivTitle Ca_font" style="left:10px; top:48px;">
+        <div style="position:absolute;top:0px;">System SW Version :</div>
+        <div style="position:absolute;top:50px;">Verimatrix CA Version :</div>
+        <div style="position:absolute;top:100px;">STB CA Porting Version :</div> 
+        <div style="position:absolute;top:150px;">CA system ID :</div>
+        <div style="position:absolute;top:200px;">Box ID :</div> 
+        <div style="position:absolute;top:250px;">Pairing Status :</div> 
+        <div style="position:absolute;top:300px;">Smartcard Number :</div> 
+        <div style="position:absolute;top:350px;">Stb IP Address :</div> 
+        <div style="position:absolute;top:400px;">AvailableCredit :</div> 
+    </div>   
+    <div class="dvb_DivTxt_bg" style="left:305px; top:54px; width:300px;">
+        <div class="CA_DivTxt" style="top:0px;"> 
+            <input id="softVNum" type="text" disabled />
+        </div>
+        <div class="CA_DivTxt" style="top:50px;"> 
+            <input id="vercaverInput" type="text" disabled />
+        </div>
+        <div class="CA_DivTxt" style="top:100px;">
+            <input id="caVNum" type="text" disabled />
+        </div>
+        <div class="CA_DivTxt" style="top:150px;">
+            <input id="casystemIdInput" type="text" disabled />
+        </div>  
+        <div class="CA_DivTxt" style="top:200px;">
+            <input id="boxIdInput" type="text" disabled /> 
+        </div>  
+        <div class="CA_DivTxt" style="top:250px;">
+            <input id="pairStateInput" type="text" disabled />
+        </div>   
+        <div class="CA_DivTxt" style="top:300px;">
+            <input id="smartCardInput" type="text" disabled />
+        </div>   
+        <div class="CA_DivTxt" style="top:350px;">
+            <input id="IPInput" type="text" disabled />
+        </div>   
+        <div class="CA_DivTxt" style="top:400px;">
+            <input id="CreditInput" type="text" disabled />
+        </div>
+    </div>  
+</div>   
+<!--Volume-->
+<div id="volumeDiv">
+    <div id="volumeBg"></div> 
+    <div id="volumeFlag"></div>
+    <div id="volumeBarBg"><div id="volumeBar"></div></div>
+    <div id="volumeText">100/100</div>
+</div> 
+</body>
+</html>

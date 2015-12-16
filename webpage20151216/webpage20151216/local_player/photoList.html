@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<script language='JavaScript' src='js/config.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/common.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/net.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/photoList.js' charset='utf-8'></script>
+<script language='JavaScript'>isKeyClock = true;</script>
+<title></title>
+<style type='text/css'>
+<!--
+* {
+	margin: 0 0 0 0;
+	position: absolute;
+	color: #e6e6e6;
+}
+#textList7, #textList6, #textList5, #textList4, #textList3, #textList2, #textList1, #textList0 {
+	margin: 0 0 0 0;
+	left: 65px;
+	width: 550px;
+	height: 32px;
+	line-height: 36px;
+	font-size: 22px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+#iconList7, #iconList6, #iconList5, #iconList4, #iconList3, #iconList2, #iconList1, #iconList0 {
+	margin: 0 0 0 0;
+	left: 15px;
+	width: 38px;
+	height: 38px;
+	overflow: hidden;
+}
+#playList7, #playList6, #playList5, #playList4, #playList3, #playList2, #playList1, #playList0 {
+	left: 80px;
+	width: 320px;
+	height: 36px;
+	line-height: 38px;
+	font-size: 22px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+-->
+</style>
+</head>
+<body bgcolor='#000000' onload='getConfig()' id='bodyID'>
+<!-- 显示列表部分，即非全屏状态 -->
+<div id='divBrowser' style='left:0px; top:0px; width:1280px; height:720px;'>
+	<!-- 功能选项图标 -->
+	<div id='titleIcon' style='left:105px; top:90px; width:539px; height:52px;'></div>
+	<!-- 列表背景图片 -->
+	<div id='bgPicture' style='left:103px; top:159px; width:1072px; height:493px;'></div>
+	<!-- 硬盘图标，硬盘信息 -->
+	<div id='diskIcon' style='left:128px; top:166px; width:43px; height:34px; background-image:url(image/pDisk.png);'></div>
+	<div id='diskInfo' style='left:185px; top:166px; width:950px; height:38px; line-height:38px; font-size:24px; overflow:hidden;'></div>
+	<!-- 项目名称列表 -->
+	<div id='itemList' style='left:117px; top:216px; width:628px; height:0px; overflow:hidden;'>
+		<!-- 项目焦点条 -->
+		<div id='itemFocus' style='left:0px; top:0px; width:628px; height:50px; background-image:url(image/pFileFocus.gif); overflow:hidden;'></div>
+		<!-- 项目图标列表 -->
+		<div id='iconList0' style='top:  6px;'></div>
+		<div id='iconList1' style='top: 54px;'></div>
+		<div id='iconList2' style='top:102px;'></div>
+		<div id='iconList3' style='top:150px;'></div>
+		<div id='iconList4' style='top:198px;'></div>
+		<div id='iconList5' style='top:246px;'></div>
+		<div id='iconList6' style='top:294px;'></div>
+		<div id='iconList7' style='top:342px;'></div>
+		<!-- 项目文字列表 -->
+		<div id='textList0' style='top:  6px;'></div>
+		<div id='textList1' style='top: 54px;'></div>
+		<div id='textList2' style='top:102px;'></div>
+		<div id='textList3' style='top:150px;'></div>
+		<div id='textList4' style='top:198px;'></div>
+		<div id='textList5' style='top:246px;'></div>
+		<div id='textList6' style='top:294px;'></div>
+		<div id='textList7' style='top:342px;'></div>
+	</div>
+	<!-- 列表翻页指示，页号显示 -->
+	<div id='pageNumber' style='left:119px; top:617px; width:400px; height:31px; line-height:23px; font-size:20px; overflow:hidden;'></div>
+	<div id='pageUp' style='left:708px; top:619px; width:26px; height:13px; background-image:url(image/pPageUp.jpg); overflow:hidden; visibility:hidden;'></div>
+	<div id='pageDown' style='left:708px; top:636px; width:26px; height:13px; background-image:url(image/pPageDown.jpg); overflow:hidden; visibility:hidden;'></div>
+	<!-- 项目类型图标 -->
+	<div id='divPicture' style='left:800px; top:230px; width:320px; height:190px;'>
+    	<img id='itemIcon' style='left:0; top:0; width:100%; height:100%;'/>
+	</div>
+	<!-- 项目信息 -->
+	<div id='itemInfo' style='left:800px; top:428px; width:356px; height:170px; line-height:20px; font-size:20px; overflow:hidden; visibility:hidden;'></div>
+	<!-- 状态提示信息 -->
+	<div id='divInfo' style='left:210px; top:345px; width:434px; height:116px; line-height:30px; font-size:24px; text-align:center; overflow:hidden; visibility:hidden;'></div>
+
+	<!-- 屏保图片列表部分 -->
+	<div id='divPlayList' style='left:747px; top:159px; width:430px; height:493px; visibility:hidden;'>
+		<div id='divTitle' style='left:90px; top:4px; width:300px; height:40px; line-height:38px; font-size:24px; overflow:hidden;'></div>
+		<div id='divMessage0' style='left:96px; top:462px; width:120px; height:30px; line-height:23px; font-size:20px; overflow:hidden;'></div>
+		<div id='divMessage1' style='left:256px; top:462px; width:120px; height:30px; line-height:23px; font-size:20px; overflow:hidden;'></div>
+		<div id='listFocus' style='left:70px; top:62px; width:340px; height:38px; background-image:url(image/pPlayListFocus.png); visibility:hidden;'></div>
+		<div id='playList0' style='top: 62px;'></div>
+		<div id='playList1' style='top:110px;'></div>
+		<div id='playList2' style='top:158px;'></div>
+		<div id='playList3' style='top:206px;'></div>
+		<div id='playList4' style='top:254px;'></div>
+		<div id='playList5' style='top:302px;'></div>
+		<div id='playList6' style='top:350px;'></div>
+		<div id='playList7' style='top:398px;'></div>
+		<div id='pageUpList' style='left:382px; top:459px; width:26px; height:13px; background-image:url(image/pPageUp.jpg); overflow:hidden; visibility:hidden;'></div>
+		<div id='pageDownList' style='left:382px; top:475px; width:26px; height:13px; background-image:url(image/pPageDown.jpg); overflow:hidden; visibility:hidden;'></div>
+	</div>
+</div>
+<!-- 全屏图片显示 -->
+<div id='fullWindows' style='left:0px; top:0px; width:1280px; height:720px; line-height:720px; text-align:center; font-size:24px; overflow:hidden;'></div>
+<!-- 全屏图片状态提示 -->
+<div id='divSetupInfo' style='left:80px; top:50px; width:440px; height:45px; line-height:40px; font-size:22px; text-indent:50px; overflow:hidden; visibility:hidden;'></div>
+<!-- 图片播放时功能菜单部分 -->
+<div id='imageMenu' style='left:370px; top:600px; width:532px; height:50px; overflow:hidden; visibility:hidden;'>
+	<div id='imageMenuFocus' style='left:22px; top:0px; width:48px; height:50px; background-image:url(image/imagePlayfocus.png); overflow:hidden;'></div>
+	<div id='imageMenuPic' style='left:22px; top:0px; width:488px; height:50px; background-image:url(image/imagePlayIcon1.png); overflow:hidden;'></div>
+	<div id='imageMenuCyc' style='left:242px; top:0px; width:48px; height:50px; background-image:url(image/imagePlayCyc1.png); overflow:hidden;'></div>
+	<div id='imageMenuTime' style='left:297px; top:0px; width:48px; height:50px; overflow:hidden; line-height:56px; font-size:16px; text-align:center;'></div>
+</div>
+<div id='divSound' style='left:1040px; top:100px; width:132px; height:40px; text-align:right; background-image:url(image/backgroundMusic.png); visibility:hidden;'>
+	<div id='mutePict' style='left:5px; top:9px; width:27px; height:24px; '></div>
+	<div id='soundPromet' style='left:15px; top:10px; width:113px; height:20px; line-height:20px; font-size:16px; text-align:left; overflow:hidden; '></div>
+</div>
+<!-- 功能菜单部分 -->
+<div id='divMenu' style='left:0px; top:0px; width:1280px; height:720px; background-color:#000000; opacity:0.7; visibility:hidden;'>
+</div>
+<div id="divMenuList" style="visibility:hidden;">
+	<div id='miniMenuBg' style='left:308px; top:270px; width:665px; height:181px; overflow:hidden;'>
+		<div id='divMenuFocus' style='left:49px; top:30px; width:126px; height:98px; overflow:hidden;'></div>
+		<div id='divMenuPos1' style='left: 70px; top:30px; width:84px; height:92px; overflow:hidden;'></div>
+		<div id='divMenuPos2' style='left:210px; top:30px; width:84px; height:92px; overflow:hidden;'></div>
+		<div id='divMenuPos3' style='left:350px; top:30px; width:84px; height:92px; overflow:hidden;'></div>
+		<div id='divMenuPos4' style='left:490px; top:30px; width:84px; height:92px; overflow:hidden;'></div>
+	</div>
+</div>
+</body>
+</html>

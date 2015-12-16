@@ -1,0 +1,546 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>tvguide_2</title>
+<script language="javascript" src="js/epg.js" charset="utf-8"></script>
+<style type="text/css">
+#allPage {
+	margin:0 0 0 0;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1280px;
+	height:720px;
+	-webkit-transition-property:all;
+	-webkit-transition-timing-function:ease-in;
+	-webkit-transition-duration:0.4s;
+}
+#pageTitle {
+	margin:0 0 0 0;
+	position:absolute;
+	top:39px;
+	left:64px;
+	width:300px;
+	height:110px;
+	text-indent:120px;
+	font-size:36px;
+	font-weight:900;
+	line-height:80px;
+	color:#FFFFFF;
+	background:url(image/new_dvb_off.png) left no-repeat;
+}
+
+#channelTips {
+	margin:0 0 0 0;
+	position:absolute;
+	top:116px;
+	left:64px;
+	width:186px;
+	height:58px;
+	font-size:24px;
+	font-weight:bolder;
+	text-align:center;
+	line-height:58px;
+	color:#9c9c9c;
+	border-width: 0px;border-style: solid; border-radius:5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#414141), to(#1a1a1a));
+}
+
+#logoShow {
+	margin:0 0 0 0;
+	position:absolute;
+	top:29px;
+	left:1122px;
+	width:65px;
+	height:74px;
+	background-image:url(image/logoImage.png);
+}
+
+#timeShow {
+	margin:0 0 0 0;
+	position:absolute;
+	top:55px;
+	left:960px;
+	width:140px;
+	height:40px;
+	color:#FFF;
+	text-align:right;
+	font-size:24px;
+	font-weight:600;
+	line-height:40px;
+}
+
+#channelBg {
+	margin:0 0 0 0;
+	position:absolute;
+	top:116px;
+	left:255px;
+	width:961px;
+	height:58px; opacity:0.7;
+	border-width: 0px;border-style: solid; border-radius:5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#414141), to(#1a1a1a));
+}
+#item_text{
+	position:absolute;
+	left:288px;
+	top:122px;
+	width:896px;
+	height:46px;
+	overflow:hidden;
+}
+
+#channelBox {
+	margin:0 0 0 0;
+	position:absolute;
+	top:5px;
+	left:32px;
+	width:898px;
+	height:48px;
+	border-width: 0px;border-style: solid; border-radius:2px;
+	background-color:#000;
+}
+
+#focusGuideChannel {
+	margin:0 0 0 0;
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:224px; 
+	height:46px;
+	//background: -webkit-gradient(linear, left top, left bottom, from(#316d00), to(#98ca06));
+	background: -webkit-gradient(linear, left top, left bottom, from(#011f55), to(#034eb3));
+	//background:-webkit-gradient(radial, 50% 50%, 20, 50% 50%, 115, from(#056ded), to(#00133e));
+	border-width: 0px;border-style: solid; border-radius:2px;
+	-webkit-transition-property:all;
+	-webkit-transition-timing-function:ease-out;
+	-webkit-transition-duration:0.2s;
+}
+
+#leftButton, .leftButton {
+	margin:0 0 0 0;
+	position:absolute;
+	left:14px;
+	top:20px;
+	border-color: transparent #fff transparent transparent;
+	border-style: solid;
+	border-width: 9px 10px 9px 0px;
+	width: 0;
+	height: 0;
+}
+
+#rightButton, .rightButton {
+	margin:0 0 0 0;
+	position:absolute;
+	left:940px;
+	top:20px;
+	border-color: transparent transparent transparent #fff;
+	border-style: solid;
+	border-width: 9px 0px 9px 10px;
+	width: 0;
+	height: 0;
+}
+
+#channelListFrame {
+	margin:0 0 0 0;
+	position:absolute;
+	left:33px;
+	top:6px;
+	width:896px;
+	height:46px;
+	overflow:hidden;
+}
+#channelList0, #channelList1, #channelList2, #channelList3 {
+	margin:0 0 0 0;
+	position:absolute;
+	top:0px;
+	width:220px;
+	height:46px;
+	text-align:center;
+	font-size:24px;
+	font-weight:600;
+	color:#999;
+	line-height:46px; vertical-align:middle;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	white-space:nowrap;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.2s;
+}
+
+#programListFrame {
+	margin:0 0 0 0;
+	position:absolute;
+	top:218px;
+	left:64px;
+	width:1152px;
+	height:255px;
+	overflow:hidden;
+}
+
+#epgListDiv {
+	margin:0 0 0 0;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:1152px;
+	height:255px;
+	overflow:hidden;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.5s;
+}
+
+#programListBg0, #programListBg1, #programListBg2, #programListBg3, #programListBg4, #programTitleBg, .listProgramBg {
+	margin:0 0 0 0;
+	position:absolute;
+	left:0px;
+	width:1152px;
+	height:40px; opacity:0.7;
+	overflow:hidden;
+	//background: -webkit-gradient(linear, left top, left bottom, from(#191919), to(#0c0c0c));
+	border-width: 0px;border-style: solid; border-radius:5px; border-radius:5px;
+}
+
+#proInfoIframe {
+	margin:0 0 0 0;
+	position:absolute;
+	left:64px;
+	top:487px;
+	width:1152px;
+	height:153px;
+	overflow:hidden;
+}
+
+#proPicture {
+	margin:0 0 0 0;
+	position:absolute;
+	left:27px;
+	top:9px;
+	width:200px;
+	height:140px;
+}
+
+#proInfo {
+	margin:0 0 0 0;
+	position:absolute;
+	left:280px;
+	top:9px;
+	width:835px;
+	height:144px;
+	font-size:22px;
+	font-weight:600;
+	color:#b2b2b2;
+	line-height:24px;
+	overflow:hidden;
+}
+
+#programListPointer{
+	margin:0 0 0 0;
+	position:absolute;
+	top:200px;
+	left:660px;
+	width:22px;
+	height:282px;
+	visibility:visible;
+	//-webkit-transition-property:all;
+	//-webkit-transition-duration:0.4s;
+}
+
+.triangle {
+	margin:0 0 0 0;
+	position:absolute;
+	top:0px;
+	left:0px;
+	border-color: #c58e0a transparent transparent transparent;
+	border-style: solid;
+	border-width: 10px 11px 0px 11px;
+	width: 0;
+	height: 0;
+}
+
+#pointerLine {
+	margin:0 0 0 0;
+	position:absolute;
+	top:10px;
+	left:10px;
+	width:2px;
+	height:272px;
+	background-color:#c58e0a;
+}
+#settingIframe {
+	margin:0 0 0 0;
+	position:absolute;
+	left:455px;
+	top:236px;
+	width:36px;
+	height:19px;
+	border-color:#b2b2b2;
+	overflow:hidden;
+	border-width: 2px;border-style: solid; border-radius:5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#4d4d4d), to(#000000));
+	-webkit-transition-duration:0.2s;
+	opacity:0.0;
+}
+
+.settingList {
+	margin:0 0 0 0;
+	position:absolute;
+	left:17px;
+	width:324px;
+	height:45px;
+	font-size:28px;
+	color:#cccccc;
+	font-weight:bolder;
+	line-height:45px;
+	border-color:#5c5c5c;
+	border-width:2px;border-style: solid; border-radius:5px;
+	background:-webkit-gradient(linear, left top, left bottom, from(#444444), to(#121212));
+	-webkit-transition-duration:0.2s;
+	opacity:0.0;
+}
+
+.settingListFocus {
+	margin:0 0 0 0;
+	position:absolute;
+	left:17px;
+	width:324px;
+	height:45px;
+	font-size:28px;
+	color:#ffffff;
+	font-weight:bolder;
+	line-height:45px;
+	border-color:#1181ff;
+	border-width:2px;border-style: solid; border-radius:5px;
+	background:-webkit-gradient(linear, left top, left bottom, from(#0457bf), to(#01245d));
+	-webkit-transition-duration:0.2s;
+}
+
+.selectStatus {
+	margin:0 0 0 0;
+	position:absolute;
+	left:280px;
+	font-size:28px;
+	color:#0F0;
+	font-weight:bolder;
+	line-height:45px;
+	visibility:hidden;
+}
+
+#backBar {
+	margin:0 0 0 0;
+	position:absolute;
+	left:64px;
+	top:648px;
+	width:1152px;
+	height:44px;
+	background-color: #181818;
+	border-width: 0px;border-style: solid; border-radius:5px;
+}
+
+#backBar0 {
+	margin:0 0 0 0;
+	position:absolute;
+	left:64px;
+	top:648px;
+	width:1152px;
+	height:44px;
+	font-size:24px;
+	font-weight:600;
+	color:#808080;
+	line-height:44px;
+}
+
+#dateShow, #timeShow0, #timeShow1, #timeShow2, #timeShow3 {
+	margin:0 0 0 0;
+	position:absolute;
+	height:40px;
+	color:#FFF;
+	font-size:22px;
+	font-weight:bolder;
+	overflow:hidden;
+	line-height:40px;
+	text-indent:20px;
+	border-right:#000000 solid 2px;
+	border-left:#717171 solid 2px;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.4s;
+}
+
+#channelOrder0, #channelOrder1, #channelOrder2, #channelOrder3, #channelOrder4 {
+	margin:0 0 0 0;
+	position:absolute;
+	width:222px;
+	height:40px;
+	font-size:22px;
+	color:#999;
+	line-height:40px;
+	font-weight:bolder;
+	text-indent:20px;
+	border-right:#000000 solid 2px;
+	border-left:#bbbbbb solid 2px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+}
+
+#programBgFocus {
+	margin:0 0 0 0;
+	position:absolute;
+	top:43px;
+	left:226px;
+	height:40px;
+	border:0px solid;
+	background: -webkit-gradient(linear, left top, left bottom, from(#011f55), to(#034eb3));
+	//background: -webkit-gradient(linear, left top, left bottom, from(#316d00), to(#98ca06));
+	-webkit-transition-property:all;
+	-webkit-transition-timing-function:ease-out;
+	-webkit-transition-duration:0.2s;
+	opacity:0.0;
+}
+
+#timeTips0, #timeTips1 {
+	margin:0 0 0 0;
+	position:absolute;
+	top:10px;
+	left:100px;
+	width:24px;
+	height:24px;
+}
+
+#timeSpeed {
+	margin:0 0 0 0;
+	position:absolute;
+	top:18px;
+	left:745px;
+	width:12px;
+	height:12px;
+	background-color:#e50808;
+	border-width: 0px;border-style: solid; border-radius:10px;
+}
+
+#tipsImage {
+	margin:0 0 0 0;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:80px;
+	height:44px;
+	font-size:20px;
+	text-indent:15px;
+	line-height:44px;
+	color:#ffb400;
+	background-image:url(image/tips.png);
+}
+#blackBack{
+	position:absolute;
+	top:0px; left:0px; width:1280px; height:720px;
+	background-color:#000000;
+}
+
+</style>
+</head>
+
+<body onload="init();">
+<div id='blackBack'></div>
+<!-- fullScreen div -->
+<div id="allPage">
+	<!-- page title -->
+    <div id="pageTitle">TV EPG</div>
+    <!-- logo show -->
+    <div id="logoShow"></div>
+    <!-- time show -->
+    <div id="timeShow"></div>
+    <!-- channel tips -->
+    <div id="channelTips">GENRE</div>
+    <!-- channelBgImage -->
+    <div id="channelBg">
+    	<!-- channel black box -->
+        <div id="channelBox"></div>
+        <!-- left button -->
+        <div id="leftButton" style="border-right-color:#999;"></div>
+        <!-- right button -->
+        <div id="rightButton"></div>
+        <!-- channel list -->
+        <div id="channelListFrame">
+            <!-- left right focus of channel -->
+            <div id="focusGuideChannel"></div>
+            <!--
+            <div id="channelList4">05 QFchannel is ok</div>
+            <div id="channelList5">06 QFchannel</div>
+            <div id="channelList6">07 CCTV</div>
+            <div id="channelList7">08 BTV</div>
+            -->
+        </div>
+    </div>
+    <div id='item_text'>
+	    <div id="channelList0" style="left:0px; color:#ffffff;">Favorites</div>
+	    <div id="channelList1" style="left:224px;">Subscribed</div>
+	    <div id="channelList2" style="left:448px;">SD Channels</div>
+	    <div id="channelList3" style="left:672px;">HD Channels</div>
+    </div>
+    <!-- program list -->
+    <div id="programListFrame">
+    	<!-- program focus -->
+    	<!-- program list bg -->
+    	<div id="programTitleBg" style="top:0px; background:-webkit-gradient(radial, 50% 50%, 100, 50% 50%, 450, from(#505050), to(#303030));">
+        	<!-- date show -->
+        	<div id="dateShow" style="width:222px; font-weight:900; border-left:0px; text-align:center;">Today</div>
+            <!-- left right key sign -->
+            <div id="dateLeftSign" class="leftButton" style="left:22px; top:11px;"></div>
+            <div id="dateLeftSign1" class="leftButton" style="left:30px; top:11px;"></div>
+            <div id="dateRightSign" class="rightButton" style="left:191px; top:11px;"></div>
+            <div id="dateRightSign1" class="rightButton" style="left:199px; top:11px;"></div>
+            <!-- time bar -->
+            <div id="timeShow0" style="width:229px; left:224px;">22:00</div>
+            <div id="timeShow1" style="width:229px; left:456px;">22:30</div>
+            <div id="timeShow2" style="width:229px; left:688px;">23:00</div>
+            <div id="timeShow3" style="width:230px; left:920px;">23:30</div>
+        </div>
+        <div class="listProgramBg" style="top:43px; background:-webkit-gradient(linear, left top, left bottom, from(#191919), to(#0c0c0c));">
+        	<div id="channelOrder0" style="border-left:0px;">CCTV 1</div>
+        </div>
+        <div class="listProgramBg" style="top:86px; background:-webkit-gradient(linear, left top, left bottom, from(#191919), to(#0c0c0c));">
+        	<div id="channelOrder1" style="border-left:0px;">CCTV 10</div>
+        </div>
+        <div class="listProgramBg" style="top:129px; background:-webkit-gradient(linear, left top, left bottom, from(#191919), to(#0c0c0c));">
+        	<div id="channelOrder2" style="border-left:0px;">BTV 2</div>
+        </div>
+        <div class="listProgramBg" style="top:172px; background:-webkit-gradient(linear, left top, left bottom, from(#191919), to(#0c0c0c));">
+        	<div id="channelOrder3" style="border-left:0px;">HLJTV 1</div>
+        </div>
+        <div class="listProgramBg" style="top:215px; background:-webkit-gradient(linear, left top, left bottom, from(#191919), to(#0c0c0c));">
+        	<div id="channelOrder4" style="border-left:0px;">HeBei 4</div>
+        </div>
+        <div id="epgListDiv">
+            <div id="programBgFocus"></div>
+            <div id="programListBg0" style="top:43px;"></div>
+            <div id="programListBg1" style="top:86px;"></div>
+            <div id="programListBg2" style="top:129px;"></div>
+            <div id="programListBg3" style="top:172px;"></div>
+            <div id="programListBg4" style="top:215px;"></div>
+        </div>
+    </div>
+    <!-- image and info -->
+    <div id="proInfoIframe">
+    	<!-- picture -->
+        <div id="proPicture"><img id="imgPro" src="" /></div>
+        <!-- info -->
+        <div id="proInfo"></div>
+    </div>
+    <!-- time pointer -->
+    <div id="programListPointer">
+		<div class="triangle"></div>
+        <div id="pointerLine"></div>
+    </div>
+    <!-- back bar -->
+     <div id="backBar"></div>
+    <div id="backBar0">
+        <div style="text-indent:85px;">  [Back] Return&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time zoom&nbsp;&nbsp;:&nbsp;&nbsp;Vol-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;Vol+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Time speed&nbsp;:</div>
+        <div id="tipsImage">Tips</div>
+        <div id="timeTips0" style="left:460px; background-image:url(image/timeDown.png);"></div>
+        <div id="timeTips1" style="left:555px; background-image:url(image/timeUp.png);"></div>
+        <div id="timeSpeed"></div>
+    </div>
+</div>
+</body>
+</html>

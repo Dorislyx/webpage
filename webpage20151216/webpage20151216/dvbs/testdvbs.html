@@ -1,0 +1,120 @@
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text-html; charset=UTF-8" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<meta http-equiv="pragma" content="no-cache" />
+    <title>Audio Test</title>
+		<script type="text/javascript">
+			var player = new AVPlayer();
+			var chn_num = 0;
+			var chn_lcn = 0;
+			var fre = 0;
+			var chn_name = '';
+			var cur_index = 0;
+            var obj;
+            var eventNum = 0;
+			
+			document.onkeypress = keyEvent;
+			
+			function keyEvent(e)
+			{
+				var keyValue = e.which;
+				document.getElementById("test1").innerHTML = 'onkeypress ¼üÖµ============= '+keyValue;
+				//alert("get virtual key: " + keyValue);
+				switch(keyValue){
+					case 1073742374:     // network active;
+						break;
+					case 48:   // remote key 0
+						document.getElementById("test2").innerHTML = 'Position = ' + player.Ag_browser_getPosition();
+						break;
+					case 49:   // 1
+                        //player.Ag_dvbs_init();
+                        player.Ag_dvbs_setTunerIndex(2);
+                       	player.Ag_dvbs_TPscanStart(0,5150,5150,5150);					//player.Ag_dvbs_ChannelListScan2(0,0,0,0,100900,30000,0,0,0,0);  
+						//player.Ag_dvbs_ChannelListScan2(0,51500,51500,0,107000,27500,0,0,0,0);  
+                        CheckScanStatus();
+						//document.getElementById("test2").innerHTML = 'mannual scan end';
+						
+						break;
+					case 50:   // 2
+	
+ player.Ag_dvbs_EITScanStart();
+					chn_num = player.Ag_dvbs_Channel_Count();
+						document.getElementById("test2").innerHTML = 'chn_num = ' + chn_num;
+						break;
+					case 51:   // 3
+                        player.Ag_dvbs_Channel_GetInfo(cur_index);
+						if(cur_index < chn_num - 1)
+							cur_index += 1;
+						else
+							cur_index = 0;
+                        setTimeout("Dvbs_play()", 1000);
+						//player.Ag_dvbs_play();
+						document.getElementById("test2").innerHTML = 'dvbs playing ' + cur_index;
+						//document.getElementById("test2").innerHTML = 'current frequency: ' + fre;
+						break;
+                    case 52:   // 4
+                        player.Ag_dvbs_EITScanStop();
+						player.Ag_dvbs_stop();
+						document.getElementById("test2").innerHTML = 'media stop';
+						break;
+					case 53:   // 5
+                        obj = player.Ag_dvbs_getPresentEvent("eng");
+						document.getElementById("test3").innerHTML = 'current startTime: ' + obj;
+						break;
+					case 54:   // 6
+                        eventNum = player.Ag_dvbs_GetScheduleEventNoByRange("2009,1,8,13,35,0, 2009,1,8,17,0,0");
+						document.getElementById("test3").innerHTML = 'current eventNum: ' + eventNum;
+						break;
+					case 55:   // 7
+					case 56:   // 8
+					case 57:   // 9
+						break;
+					case 415:  // play
+						player.Ag_dvbc_play(chn_lcn);
+						document.getElementById("test2").innerHTML = 'playing channel, lcn = ' + chn_lcn;
+						break;
+					case 413:  // stop
+						player.Ag_dvbc_stopPlay();
+						break;
+					case 213:  //back
+						document.getElementById("test2").innerHTML = 'Position = get back key';
+						return 1; // not return zero, stands for webpage not deal with this key
+					default:
+						//alert("get network active virtual key: " + keyValue);
+						break;
+					}
+				
+				return;
+			}
+function Dvbs_play(){
+    player.Ag_dvbs_play();
+}
+
+function CheckScanStatus(){
+    var status = player.Ag_dvbs_ChannelListGetScanStatus();
+    if(status != 2)
+        setTimeout("CheckScanStatus()", 1000);
+    else
+        document.getElementById("test2").innerHTML = 'Channel list scan over!';
+}
+			
+			function onLoad() {
+				alert("----- Test Begin -----");
+
+                         player.Ag_dvbs_init();
+				
+				//alert("Ag_system_getModeNo() ret = " + player.Ag_system_getModeNo());
+				//alert("Ag_homePage_set() ret = " + player.Ag_homePage_set("file:///home/fetchtv/sui/internet_test_redirect.html"));
+				//alert("Ag_time_getLocalTime() ret = " + player.Ag_time_getLocalTime());
+				//alert("Ag_time_setLocalTime() ret = " + player.Ag_time_setLocalTime("2011:04:07:10:55:30"));
+				//alert("----- Test End ------");
+			}
+		</script>
+  </head>
+  <body onload="onLoad();" style="margin:0;">
+  	<div id="test1" style="margin:0 0 0 0; position:absolute; top:100px; left:100px; width:300px; height:80px; color:RED; font-size:24px;"></div>
+  	<div id="test2" style="margin:0 0 0 0; position:absolute; top:180px; left:100px; width:600px; height:80px; color:RED; font-size:24px;"></div>
+  	<div id="test3" style="margin:0 0 0 0; position:absolute; top:240px; left:100px; width:600px; height:80px; color:RED; font-size:24px;"></div>
+    </body>
+</html>

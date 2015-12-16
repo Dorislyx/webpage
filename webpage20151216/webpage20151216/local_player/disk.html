@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<script language='JavaScript' src='js/config.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/common.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/net.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/disk.js' charset='utf-8'></script>
+<script language='JavaScript'>isKeyClock = true;</script>
+<title></title>
+<style type='text/css'>
+<!--
+* {
+	margin: 0 0 0 0;
+	position: absolute;
+	color: #e6e6e6;
+}
+#itemList7, #itemList6, #itemList5, #itemList4, #itemList3, #itemList2, #itemList1, #itemList0 {
+	margin: 0 0 0 0;
+	left: 15px;
+	width: 412px;
+	height: 38px;
+	line-height: 38px;
+	font-size: 22px;
+	overflow: hidden;
+}
+#diskList3, #diskList2, #diskList1, #diskList0 {
+	margin: 0 0 0 0;
+	width: 127px;
+	height: 39px;
+	line-height: 39px;
+	color: #777777;
+	font-size: 24px;
+	text-align: center;
+	overflow: hidden;
+}
+
+-->
+</style>
+</head>
+<body bgcolor='#000000' onload='getConfig()'>
+<!-- 功能选项图标 -->
+<div id='titleIcon' style='left:105px; top:90px; width:539px; height:52px;'></div>
+<!-- 列表背景图片 -->
+<div id='bgPicture' style='left:103px; top:157px; width:542px; height:493px;'></div>
+<!-- 项目名称列表 -->
+<div id='itemList' style='left:120px; top:221px; width:509px; height:0px; overflow:visible;'>
+	<!-- 项目焦点条 -->
+	<div id='itemFocus' style='left:-6px; top:-6px; width:519px; height:50px; background-image:url(image/pDiskFocus.gif); overflow:hidden;'></div>
+	<!-- 项目文字列表 -->
+	<div id='itemList0' style='top:  0px;'></div>
+	<div id='itemList1' style='top: 48px;'></div>
+	<div id='itemList2' style='top: 96px;'></div>
+	<div id='itemList3' style='top:144px;'></div>
+	<div id='itemList4' style='top:192px;'></div>
+	<div id='itemList5' style='top:240px;'></div>
+	<div id='itemList6' style='top:288px;'></div>
+	<div id='itemList7' style='top:336px;'></div>
+</div>
+<!-- 列表翻页指示，页号显示 -->
+<div id='pageNumber' style='left:121px; top:610px; width:460px; height:31px; line-height:31px; font-size:22px; overflow:hidden;'></div>
+<div id='pageUp' style='left:603px; top:618px; width:26px; height:13px; background-image:url(image/pPageUp.jpg); overflow:hidden; visibility:hidden;'></div>
+<div id='pageDown' style='left:603px; top:635px; width:26px; height:13px;  background-image:url(image/pPageDown.jpg); overflow:hidden; visibility:hidden;'></div>
+<!-- 硬盘列表，焦点条 -->
+<div id='diskFocus' style='left:121px; top:167px; width:127px; height:39px; background-image:url(image/pDiskFocusOff.png); visibility:hidden;'></div>
+<div id='diskList' style='left:121px; top:167px; width:507px; height:39px;'>
+	<div id='diskList0' style='left:0px;'></div>
+	<div id='diskList1' style='left:127px;'></div>
+	<div id='diskList2' style='left:254px;'></div>
+	<div id='diskList3' style='left:381px;'></div>
+</div>
+<!-- 项目类型图标 -->
+<div id='itemIcon' style='left:865px; top:260px; width:113px; height:144px; background-image:url(image/pZoneIcon.jpg); visibility:hidden;'></div>
+<!-- 项目信息 -->
+<div id='itemInfo' style='left:800px; top:430px; width:356px; height:176px; line-height:22px; font-size:20px; overflow:hidden; visibility:hidden;'></div>
+<!-- 状态提示信息 -->
+<div id='divInfo' style='left:385px; top:319px; width:434px; height:116px; line-height:23px; font-size:24px; text-align:center; overflow:hidden; visibility:hidden;'></div>
+<!-- 功能菜单部分 -->
+<div id='divMenu' style='left:0px; top:0px; width:1280px; height:720px; overflow:hidden; visibility:hidden;'>
+	<div id='divMenuFocus' style='left:221px; top:220px; width:84px; height:92px; background-image:url(image/menuIconFocus.png); overflow:hidden;'></div>
+	<div id='divMenuPos1' style='left:221px; top:220px; width:84px; height:92px; overflow:hidden;'></div>
+	<div id='divMenuPos2' style='left:335px; top:220px; width:84px; height:92px; overflow:hidden;'></div>
+</div>
+</body>
+</html>

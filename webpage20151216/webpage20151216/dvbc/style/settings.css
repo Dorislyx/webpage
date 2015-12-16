@@ -1,0 +1,733 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	margin:0px; 
+	padding:0px;	
+	font-family:Arial, Helvetica, sans-serif;
+}
+#bodyBack{position:absolute;top:0px; left:0px;width:1280px; height:720px; overflow:hidden;-webkit-transition-property:all;-webkit-transition-duration:2s;}
+#blackBack{
+	position:absolute; background-color:#000000;
+	top:0px; left:0px; width:1280px; height:720px;
+	-webkit-transition-duration:.3s;
+}
+
+#pageTitle {
+	position:absolute;
+	top:29px; left:79px; width:66px; height:72px;
+	background:url(../image/settingsIcon.png);
+}
+#titleText{
+	position:absolute;
+	top:54px; left:162px; width:150px; height:36px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:35px; font-weight:bold;
+	color:#999;
+}
+
+#logoShow {
+	position:absolute;
+	top:29px; left:1122px; width:65px; height:74px;
+	background-image:url(../image/logoImage.png);
+}
+
+#timeShow {
+	position:absolute;
+	top:72px; left:960px; width:140px; height:40px;
+	color:#b2b2b2; text-align:right; font-size:20px; line-height:40px;
+}
+
+#upNavig{
+	position:absolute;
+	height:58px; width:1151px; left: 65px; top: 116px;
+	-webkit-border-radius:5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#414141), to(#1a1a1a));
+}
+#item_text{
+	position:absolute;
+	left:96px;
+	top:122px;
+	width:1090px;
+	height:46px;
+	overflow:hidden;
+}
+
+#upItem{
+	position:absolute;
+	margin:0 0 0 0;
+	height:46px; width:1090px; left: 31px; top: 6px;
+	overflow:hidden; background-color:#000000;
+	-webkit-border-radius:5px;
+}
+#downItem{
+	position:absolute;
+	height:44px; width:1152px; left: 64px; top: 648px;
+	-webkit-border-radius:5px;	background-color:#181818;
+}
+#downItem0{
+	position:absolute;
+	height:44px; width:1152px; left: 64px; top: 648px;color:#808080;
+	line-height:44px; font-size:24px; vertical-align:middle;
+}
+#tipsImage {
+	margin:0 0 0 0;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:80px;
+	height:44px;
+	text-indent:15px;
+	line-height:44px;
+	font-size:20px;
+	color:#ffb400;
+	background-image:url(../image/tips.png);
+}
+
+/*导航里的内容定义*/
+#leftLt{
+	margin:0 0 0 0;
+	position:absolute;
+	border-color: transparent #b2b2b2 transparent transparent;
+	border-style: solid;
+	border-width: 9px 10px 9px 0px;
+	top:20px; width: 0; height: 0; left:10px;
+	-webkit-transition-duration:.5s;
+	opacity:0;
+}
+#rightGt{
+	margin:0 0 0 0;
+	position:absolute;
+	top:20px;
+	border-color: transparent transparent transparent #b2b2b2;
+	border-style: solid;
+	border-width: 9px 0px 9px 10px;
+	width: 0;
+	height: 0;
+	left:1132px;
+	-webkit-transition-duration:.5s;
+}
+#item0,#item1,#item2,#item3,#item4,#item5,#item6,#item7{
+	position:absolute; line-height:46px; vertical-align:middle;
+	height:46px; width:223px;	font-size:24px;	color:#b2b2b2;
+	-webkit-transition-property:left,right; text-align:center;
+	-webkit-transition-duration:.5s;
+}
+#item0{color:#ffffff;}
+#focusBar{
+	position:absolute;
+	left:1px; top:1px; width:223px;	height:44px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#011f55), to(#034eb3));
+	-webkit-transition-duration:.5s;
+	-webkit-border-radius:2px;
+}
+#focusBarMove{
+	position:absolute;
+	left:1px; top:1px; width:223px;	height:46px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#464646), to(#787878));
+	-webkit-transition-duration:.5s;
+	opacity:0.0;
+	-webkit-border-radius:2px;
+}
+/*
+#focusBar{
+	position:absolute;
+	left:1px;
+	top:-113px;
+	width:272px;
+	height:272px;
+	background:-webkit-gradient(radial, 136 136, 105, 136 136, 180, from(#6bc2ff), to(#021847));
+	-webkit-transition-property:translateX;
+	-webkit-transition-duration:.6s;
+	-webkit-border-radius:5px;
+	-webkit-transform:scaleY(0.17);
+}*/
+/*导航里各个菜单内容的定义*/
+/*菜单一内容定义*/
+
+#middle0,#middle1,#middle2,#middle3,#middle4,#middle5,#middle6,#middle7{
+	position:absolute;
+	margin:0;
+	top:189px;
+	left:1280px;
+	width:1080px;
+	height:453px;
+	visibility:hidden;
+	-webkit-transition-duration:1s;
+}
+#middle0{
+	left:108px;
+	visibility:visible;
+	-webkit-border-radius:10px;
+}
+
+/*****************************video set css start***************************************/
+#videoChild0, #videoChild1, #videoChild2 {
+	margin:0;
+	position:absolute;
+	left:210px;
+	width:160px;
+	height:40px;
+	color:#b2b2b2;
+	font-size:24px;
+	text-align:right;
+	font-weight:bolder;
+}
+
+#videoFocus{
+	position:absolute; width:286px; height:34px; top:73px; left:448px; z-index:20;
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.5s; 
+	-webkit-border-radius:2px;
+	opacity:0.0;
+	background: -webkit-gradient(linear, left top, left bottom, from(#012765), to(#0569e7));
+}
+
+#videoValue0, #videoValue1, #videoValue2, #valueTimeBg0, #valueTimeBg1, #valueTimeBg2, #valueTimeBg3 {
+	position:absolute;
+	left: 410px;
+	height:36px;
+	width:290px;
+	border:2px solid #272727;
+	border-right:36px solid #262626;
+	border-left:36px solid #262626;
+	-webkit-border-radius:2px;
+	overflow:hidden; z-index:18;
+	text-align:center;
+	font-size:24px;
+	font-weight:bolder;
+	color:#b2b2b2;
+}
+
+#video_mess0,#video_mess1,#video_mess2 {
+	position:absolute; left:446px; width:290px; z-index:22;
+	text-align:center; vertical-align:middle; line-height:36px;
+	font-size:22px;	font-weight:bolder; color:#b2b2b2;
+	opacity:1; -webkit-transition-duration:.6s;
+}
+
+/******************button css********************/
+#twoButton, .twoButton{
+	position:absolute;
+	top:350px;
+	left:385px;
+	width:440px;
+	height:54px;
+}
+#userSave,#userCancel,.userSave,.userCancel{
+	position:absolute; width:150px; height:40px; 
+	text-align:center; vertical-align:middle; line-height:40px; color:#b2b2b2; font-size:24px; font-weight:bolder;
+}
+
+#saveButton,#cancelButt,.saveButton,.cancelButt{
+	position:absolute; width:150px; height:40px; -webkit-border-radius:3px;
+	background:-webkit-gradient(linear, left top, left bottom, from(#2f2f2f), to(#414141));
+}
+#buttonFocus,.buttonFocus{
+	position:absolute; width:150px; height:40px;
+	text-align:center; vertical-align:middle; line-height:40px; color:#b2b2b2; font-size:24px; font-weight:bolder;
+	background:-webkit-gradient(linear, left top, left bottom,from(#032d7a), to(#056ce9));
+	opacity:0.0;-webkit-border-radius:3px;
+	-webkit-transition-duration:.4s;
+}
+/******************button css********************/
+
+#leftLt0,#leftLt1,#leftLt2,#timeLeftLt0,#timeLeftLt1,#upLeftLt0{
+	position:absolute;
+	border-color: transparent #848484 transparent transparent;
+	border-style: solid;
+	border-width: 9px 10px 9px 0px;
+	width: 0; height: 0; left:7px;
+}
+#rightGt0,#rightGt1,#rightGt2,#timeRightRt0,#timeRightRt1,#upRightRt0{
+	position:absolute;
+	left:7px;
+	border-color: transparent transparent transparent #848484;
+	border-style: solid;
+	border-width: 9px 0px 9px 10px;
+	width: 0;
+	height: 0;
+}
+/*****************************video set css end***************************************/
+
+/*****************************network set css start***************************************/
+#leftMenu{
+	position:absolute;
+	top:50px;left:155px; height:250px; width:220px;
+	border-width: 2px;border-style: solid; border-radius:3px;
+	border-color:#3d3d3d;
+}
+#rightMenu{
+	position:absolute;
+	top:50px;
+	left:385px;
+	height:250px;
+	width:550px; overflow:hidden;
+	border-width: 2px;border-style: solid; border-radius:3px;
+	border-color:#3d3d3d;
+	-webkit-transition-duration:0.4s;
+	opacity:1;
+}
+#menu0,#menu1,#menu2{
+	position:absolute;
+	left:70px;
+	width:185px;
+	height:58px;
+	line-height:58px;
+	color:#999999;
+	font-size:24px;
+	font-weight:bolder;
+}
+#menu0,#menuRight0{top:20px;}
+#menu1,#menuRight1{top:80px;}
+#menu2,#menuRight2{top:140px;}
+#menu3,#menuRight3{top:200px;}
+#netFocus{
+	margin:0;
+	position:absolute;
+	left:1px; 
+	top:2px;
+	width:218px;
+	//height:84px;
+	height:210px;
+	opacity:0.0;
+	background-image:-webkit-gradient(radial, 50% 50%, 10, 50% 50%, 145, from(#0569e7), to(#02204d));
+	-webkit-transform:scale(1,0.4);
+	-webkit-transform-origin:top;
+	-webkit-border-radius:2px;
+	-webkit-transition-duration:0.4s;
+}
+
+#selectSign {
+	position:absolute;
+	top:32px;
+	left:40px;
+	width:22px;
+	height:21px;
+	font-size:24px;
+	line-height:58px;
+	background-image:url(../image/fav_flag.png);
+}
+
+#menuRight0,#menuRight1,#menuRight2,#menuRight3{
+	position:absolute;
+	left:10px;
+	width:150px;
+	color:#b2b2b2;
+}
+
+#listName0, #listName1, #listName2, #listName3, #listName4, #nameText, #passText {
+	position:absolute;
+	left:0px;
+	width:175px;
+	height:34px;
+	line-height:34px;
+	text-align:right;
+	font-size:22px;
+	font-weight:bolder;
+	color:#b2b2b2;
+	overflow:hidden;
+}
+
+#valueListBg0, #valueListBg1, #valueListBg2, #valueListBg3, #valueListBg4, #nameValue, #passValue {
+	position:absolute;
+	left:8px;
+	width:244px;
+	height:34px;
+	background-color:#000;
+	border:2px solid #272727;
+	text-align:center;
+	color:#999;
+	font-size:24px;
+	line-height:34px;
+	font-weight:bolder;
+	-webkit-border-radius:2px;
+
+}
+#valueList00, #valueList01, #valueList02, #valueList03, #valueList04, #valueList20, #valueList21 {
+	position:absolute;
+	left:12px;
+	width:240px;
+	height:36px;
+	text-align:center;
+	color:#b2b2b2;
+	font-size:22px;
+	line-height:36px;
+	font-weight:bolder;
+	overflow:hidden;
+}
+
+.ipAddressClass li {
+	margin:0;
+	position: relative;
+	float:left;
+	left:0px;
+	height:36px;
+	font-size:22px;
+	font-weight:bolder;
+	line-height:36px;
+	color:#b2b2b2;
+	text-align:center;
+	list-style-type:none;
+}
+
+#inputIPFocus, #inputTimeFocus {
+	position:absolute;
+	top:2px;
+	left:40px;
+	width:40px;
+	height:28px;
+	-webkit-border-radius:2px;
+	background:#000;
+	opacity:0;
+	-webkit-transition-duration:0.4s;
+}
+
+#settingValueFocus, #settingPPPoEFocus, #timeFocus, #upgradeFocus {
+	position:absolute;
+	left:12px;
+	top:4px;
+	width:220px;
+	height:36px;
+	-webkit-border-radius:2px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#012765), to(#0569e7));
+	opacity:0.0;
+	-webkit-transition-duration:0.4s;
+}
+
+#inputIP00, #inputIP01, #inputIP02, #inputIP03, #inputIP10, #inputIP11, #inputIP12, #inputIP13, #inputIP20, #inputIP21, #inputIP22, #inputIP23, #inputIP30, #inputIP31, #inputIP32, #inputIP33 {
+	position:absolute;
+	top:3px;
+	width:45px;
+	height:30px;
+	line-height:30px;
+	text-align:right;
+	color:#b2b2b2;
+	-webkit-border-radius:2px;
+}
+
+#netDiv0, #netDiv1, #netDiv2 {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:550px;
+	height:250px;
+	color:#b2b2b2;
+}
+/*****************************network set css end***************************************/
+
+/*****************************time set css start***************************************/
+#timeLeftDiv, #timeRightDiv {
+	position:absolute;
+	top:70px;
+	left:180px;
+	width:230px;
+	height:250px;
+}
+
+#timeText0, #timeText1, #timeText2, #timeText3 {
+	position:absolute;
+	left:0px;
+	width:230px;
+	height:40px;
+	text-align:right;
+	color:#b2b2b2;
+	font-size:24px;
+	line-height:40px;
+	font-weight:bolder;
+	overflow:hidden;
+}
+
+#timeList0, #timeList1, #timeList2, #timeList3 {
+	position:absolute;
+	left:38px;
+	height:32px;
+	width:286px;
+	line-height:32px;
+	font-size:22px;
+	font-weight:bolder;
+	color:#b2b2b2;
+	text-align:center;
+	overflow:hidden;
+}
+/*****************************time set css end***************************************/
+
+/*****************************upgrade set css start***************************************/
+#upgradeText0, #upgradeText1, #defaultText {
+	position:absolute;
+	left:180px;
+	top:70px;
+	width:230px;
+	height:40px;
+	text-align:right;
+	line-height:40px;
+	font-size:22px;
+	font-weight:bolder;
+	color:#b2b2b2;
+}
+
+#upgradeAddress, .inputMode {
+	position:absolute;
+	left:445px;
+	top:130px;
+	width:350px;
+	padding:5px;
+	line-height:26px;
+	font-size:20px;
+	font-weight:bolder;
+	color:#b2b2b2;
+	word-wrap:break-word;
+	overflow:visible;
+	border: #333 solid 2px;
+	-webkit-border-radius:4px;
+}
+
+#upgradeModeValue {
+	position:absolute;
+	left: 445px;
+	height:36px;
+	width:304px;
+	border:2px solid #272727;
+	border-right:30px solid #262626;
+	border-left:30px solid #262626;
+	-webkit-border-radius:2px;
+	overflow:hidden; z-index:36;
+	line-height:36px;
+	text-align:center;
+	font-size:22px;
+	font-weight:bolder;
+	color:#b2b2b2;
+}
+
+/*****************************upgrade set css end***************************************/
+
+/*****************************default set css start***************************************/
+
+/*****************************default set css start***************************************/
+/***************************** Infor start **********************************************/
+#InforDivTxt{
+	position:absolute;
+	top:113px;
+	left:303px;
+	width:519px;
+	height:233px;
+}
+#InforDivTxt #InforDiv0,#InforDiv1,#InforDiv2,#InforDiv3,#InforDiv4{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:207px;
+	height:40px;
+	text-align:right;
+	font-size:24px; 
+	color:#b2b2b2;
+	line-height:40px;
+	overflow:hidden;
+}
+#InforDivTxt .InforDivtxt{
+	position:absolute;
+	top:0px;
+	left:227px;
+	width:292px;
+	height:40px;
+	font-size:24px; 
+	color:#b2b2b2;
+	line-height:40px;
+	overflow:hidden;
+}
+/***************************** Infor End  ************************************************/
+/***************************** Homepage Add Set start***************************************/
+#addSetDivTxt{
+	position:absolute;
+	top:95px;
+	left:275px;
+	width:217px;
+	height:40px;
+	font-size:24px;
+	font-weight:bold;
+	color:#b2b2b2;
+	line-height:40px;
+}
+#AddSetFocus{
+	position:absolute;
+	top:117px;
+	left:435px;
+	width:396px;
+	height:91px;
+	font-size:20px;
+	white-space:normal; 
+	word-break:break-all;
+	overflow:hidden;
+	font-weight:bold;
+	color:#b2b2b2;
+	background:transparent;
+	border:2px #013376 solid;
+	line-height:40px;
+	border-radius:6px;
+	opacity:0;
+}
+/***************************** Homepage Add Set end***************************************/
+
+/******************************** Dvb Setting start ***********************************/
+.dvb_DivTitle{
+	position:absolute;
+	top:65px;
+	left:225px;
+	width:172px;
+	height:285px;
+	text-align:right; 
+	overflow:hidden;
+} 
+.dvb_DivTitle div{
+	position:absolute;
+	top:0px;
+	left:0px;
+	text-align:right;
+	font-size:22px;
+	color:#b2b2b2;
+	width:172px;
+	line-height:40px;
+}
+.dvb_BoxIco{
+	position:absolute;
+	font-size:24px;
+	color:#b2b2b2; 
+	z-index:22;
+}
+.dvb_DivBox{
+	position:absolute;
+	top:65px;
+	left:434px;
+	width:396px;
+	height:285px;
+	overflow:hidden;
+}
+.dvb_DivBox .dvb_DivBox_bg{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:324px;
+	height:36px;
+	text-align:center;
+	border:2px #272727 solid;
+	border-right:36px #262626 solid;
+	border-left:36px #262626 solid;
+	background:#000;
+	border-radius:2px; 
+}
+.dvb_DivBox #dvb_sigQBox_bg{
+	position:absolute;
+	top:196px;
+	left:0px;
+	width:396px;
+	height:40px;
+	border-radius:2px;
+	background:-webkit-gradient(linear, left top, left bottom, from(#1C1C1C), to(#1C1C1C));
+}
+#dvbFocus{
+	position:absolute;
+	top:68px;
+	left:471px;
+	width:322px;
+	height:34px;
+	text-align:center;
+	border-radius:2px;
+	background:-webkit-gradient(linear, left top, left bottom, from(#011f55), to(#034eb3));
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.3s;
+	opacity:0; 
+}
+.dvb_DivTxt_bg{
+	position:absolute;
+	top:65px;
+	left:471px;
+	width:322px;
+	height:285px;
+	text-align:center; 
+	font-size:22px;
+	color:#b2b2b2; 
+	overflow:hidden;  
+}
+.dvb_DivTxt_bg .dvb_DivTxt{
+	position:absolute; 
+	width:322px;
+	height:34px;
+	text-align:center; 
+	font-size:20px;
+	color:#b2b2b2;
+	line-height:40px;
+	overflow:hidden; 
+}
+#dvb_DivTxtbarbg{
+	position:absolute;
+	top:16px;
+	left:12px; 
+	width:322px; 
+	height:8px;
+	border-radius:4px;
+	border:1px #444444 solid;
+	background:#000;
+	opacity:1;
+}  
+#dvb_DivTxtbar{
+	position:absolute;
+	top:18px; 
+	left:14px;
+	width:0px; 
+	height:6px; 
+	border-radius:4px; 
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.4s; 
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#BEF2A4), to(#A5FD77),color-stop(50%,#40AA22)); 
+	opacity:1;
+}   
+#dvb_DivTxt4{
+	position:absolute;
+	top:0px;
+	right:12px; 
+	font-size:20px;
+	color:#b2b2b2;
+	line-height:40px;
+}   
+.Dvb_TipsDiv{
+	position:absolute;
+	top:100px;
+	left:343px; 
+	width:380px;
+	height:165px;
+	border:1px #666 solid;
+	border-radius:6px;
+	background:-webkit-gradient(linear, left top, left bottom, from(#1a1a1a), to(#414141)); 
+	//-webkit-transform:scale(0,1); 
+	-webkit-transition-property:all;
+	-webkit-transition-duration:0.5s;
+	opacity:0;  
+	//visibility:hidden; 
+	z-index:666;
+} 
+.Dvb_TipsDiv #Tipsserver{
+	position:absolute;
+	top:113px;
+	left:130px;
+	width:117px;
+	height:28px;
+	padding-top:3px;
+	font-size:20px;
+	text-align:center;
+	color:#b2b2b2; 
+	border:1px #1181FF solid;
+	border-radius:4px;
+	background:-webkit-gradient(linear, left top, left bottom, from(#011f55), to(#034eb3));
+	
+} 
+.Dvb_TipsDiv #Dvb_TipsDivTxt,#upgradeTipsDivTxt{ 
+	position:absolute;
+	top:35px;
+	left:0px;
+	width:380px;   
+	font-size:20px;
+	color:#b2b2b2;
+	text-align:center;
+}
+/******************************** Dvb Setting End ***********************************/
+
+

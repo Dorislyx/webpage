@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style/menu.css" type="text/css" />
+<link rel="stylesheet" href="style/iptv.css" type="text/css" />
+<script language="javascript" src="js/menu.js"></script>
+<script language="javascript" src="js/iptv_Channel.js"></script>
+<script language="javascript" src="js/iptv.js"></script>
+<title>Iptv</title>
+</head>
+<body bgcolor="transparent" leftmargin="0" topmargin="0" marginheight="0" marginwidth="0" onload="init()">
+<!--<div id="test_bg"></div>-->
+<div id="wap">
+  <!--Channel Number Div-->
+  <div id="ChannelNumDiv" align="right"></div>
+  <!--Channel List-->
+  <div id="ListDiv">
+  <div id="ListDiv_bg"></div>
+  <div id="ListDiv_text">
+  <div id="ListDiv_bg1"></div><div id="ListDiv_line"></div><div id="ListDiv_line_down" style="top:529px;"></div>
+  <div id="ChannelTopTitle" style="position:absolute; top:92px; left:53px; width:400px; height:45px;color:#787878; font-size:28px; line-height:45px; font-weight:bolder;">CHANNEL LIST</div> 
+  <!--Channel List Bar-->
+  <div id="ChannelDivbar" class="ChannelDivbar">
+    <div id="barDivUp"></div> 
+    <div id="barDivDown"></div>
+  </div>
+  <!--ChannelDiv List -->
+  <div id="ChannelDiv" class="ChannelDiv">
+  	   <!--Channel_List_bg-->
+       <div id="ChannelList0" class="ChannelListdiv" style="top:0px; background:#242424;"></div> 
+       <div id="ChannelList1" class="ChannelListdiv" style="top:39px; background:#292929;"></div> 
+       <div id="ChannelList2" class="ChannelListdiv" style="top:78px; background:#242424;"></div> 
+       <div id="ChannelList3" class="ChannelListdiv" style="top:117px; background:#292929;"></div> 
+       <div id="ChannelList4" class="ChannelListdiv" style="top:156px; background:#242424;"></div> 
+       <div id="ChannelList5" class="ChannelListdiv" style="top:195px; background:#292929;"></div> 
+       <div id="ChannelList6" class="ChannelListdiv" style="top:234px; background:#242424;"></div>
+       <div id="ChannelList7" class="ChannelListdiv" style="top:273px; background:#292929;"></div>
+       <div id="ChannelList8" class="ChannelListdiv" style="top:312px; background:#242424;"></div>
+       <div id="ChannelList9" class="ChannelListdiv" style="top:351px; background:#292929;"></div> 
+     <!--Channel List FocusDiv-->
+     <div id="ListFocusDiv" class="ListFocusDiv"></div>   
+     	<!-- channel num -->
+        <div id="channelNum0" class="channelNumClass" style="top:0px;"></div>
+        <div id="channelNum1" class="channelNumClass" style="top:39px;"></div>
+        <div id="channelNum2" class="channelNumClass" style="top:78px;"></div> 
+        <div id="channelNum3" class="channelNumClass" style="top:117px;"></div>
+        <div id="channelNum4" class="channelNumClass" style="top:156px;"></div>
+        <div id="channelNum5" class="channelNumClass" style="top:195px;"></div> 
+        <div id="channelNum6" class="channelNumClass" style="top:234px;"></div>
+        <div id="channelNum7" class="channelNumClass" style="top:273px;"></div>
+        <div id="channelNum8" class="channelNumClass" style="top:312px;"></div> 
+        <div id="channelNum9" class="channelNumClass" style="top:351px;"></div>
+       <!--Channel_Name-->
+       <div id="Channel_A0" class="Channel_Name" style="top:0px;"></div>
+       <div id="Channel_A1" class="Channel_Name" style="top:39px;"></div>
+       <div id="Channel_A2" class="Channel_Name" style="top:78px;"></div>
+       <div id="Channel_A3" class="Channel_Name" style="top:117px;"></div>
+       <div id="Channel_A4" class="Channel_Name" style="top:156px;"></div>
+       <div id="Channel_A5" class="Channel_Name" style="top:195px;"></div>
+       <div id="Channel_A6" class="Channel_Name" style="top:234px;"></div>
+       <div id="Channel_A7" class="Channel_Name" style="top:273px;"></div>
+       <div id="Channel_A8" class="Channel_Name" style="top:312px;"></div>
+       <div id="Channel_A9" class="Channel_Name" style="top:351px;"></div> 
+       <!--List Page-->
+       <div id="ListPage" class="ListPage" align="right"></div>
+     <!--ChannelDiv List End-->
+     </div>
+     <!--ChannelDivInfor End-->
+    </div>
+    </div>
+  </div> 
+    <!--Channel List End-->
+  <!--Channel Infor-->
+  <div id="ChannelInforDiv"> 
+    <div id="ChannelInforDiv_bg" class="ChannelInforDiv_bg"></div>
+    <div style="border-left:1px #1a1a1a solid; border-right:1px #4f4f4f solid;position:absolute; top:0px; left:380px; width:0px; height:67px;"></div>
+    <div id="ChannelInforDiv_Txt" class="ChannelInforDiv_Txt">
+      <div id="ChannelTitle_bg">
+        <div id="ChannelTitle_Rec"></div>
+        <div id="ChannelTitle"></div>
+      </div>
+      <div id="ChannelTxt"></div>
+    </div>
+    <!-- channel info line -->
+    <div id="channelInfoLine"></div>
+    <div id="TipsDivBottom_bg" class="TipsDivBottom_bg"></div>
+    <div id="TipsDivBottom" class="TipsDivBottom">
+      <div id="TipsBottomleft">
+        <span>Tips</span>
+      </div>
+      <div id="TipsBottommoddle">
+       <div id="TipsSelect" style="position:absolute; left:100px; top:0px;">
+          <div style="position:absolute; top:11px; left:0px; border-color: transparent transparent #9e9e9e transparent; border-width: 0px 8px 9px 8px; border-style: solid; width:0px; height:0px;"></div>
+          <div style="position:absolute; top:23px; left:0px; border-color: #9e9e9e transparent transparent transparent; border-width: 9px 8px 0px 8px; border-style: solid; width:0px; height:0px;"></div>
+          <div style="position:absolute; top:10px; left:20px; color:#a6a6a6;">&nbsp;Select</div> 
+       </div> 
+       <div style="position:absolute; left:204px; top: 10px; font-size:18px; color:#a6a6a6">
+         [Ok] Play
+       </div>
+       <div style="position:absolute; left:310px; top: 10px; font-size:18px; color:#a6a6a6">
+         [Exit] Close
+       </div>
+       <div id="TipsBottomrecord" style="position:absolute; left:435px; top: 2px; "> 
+         <div style="position:absolute; top:14px; left:0px; background-color:#e50808; width:12px; height:12px; border-width: 0px;border-style: solid; border-radius:6px;"></div>
+         <div style="position:absolute; top:8px; left:15px; color:#a6a6a6; width:180px;">&nbsp;Start / Stop&nbsp;Recording</div>
+       </div> 
+       <div id="TipsBottomPip" style="position:absolute; left:665px; top: 2px;"> 
+          <div style="position:absolute; top:14px; left:0px; background-color:#83cf0c; width:12px; height:12px; border-width: 0px;border-style: solid; border-radius:6px;"></div>
+          <div style="position:absolute; top:8px; left:15px; width:150px; color:#a6a6a6">&nbsp;Open / Close PIP</div>
+       </div> 
+       <div id="TipsBottomTs" style="position:absolute; left:845px; top: 2px;"> 
+          <div style="position:absolute; top:14px; left:0px; background-color:#0a62e6; width:12px; height:12px; border-width: 0px;border-style: solid; border-radius:6px;"></div>
+          <div style="position:absolute; top:8px; left:15px; color:#a6a6a6">&nbsp;TimeShift</div>
+       </div>
+      </div>
+    <!--Time-->
+    <div id="TipsBottomright" align="right">
+      <div id="Tips_Time" style="position:absolute; top:0px; right:60px;"></div>
+      <div id="Tips_Date" style="position:absolute; top:0px; right:0px;"></div>        
+    </div>
+   </div>
+  </div>
+  <!--Channel End-->
+  <!--Tips Div-->
+<div id="TipsDiv" class="TipsDiv">
+    <div id="TipsDiv_bg" class="TipsDiv_bg"></div>
+    <div id="TipsDivico"></div>
+    <div id="TipsDivTxt"></div>
+  <div id="Tipsserver">
+    Confirm
+  </div>
+  <div id="Tipscancel">
+    Cancel
+  </div>
+  </div>
+  <!--Tips End-->
+  <!--Volume-->
+    <div id="volumeDiv">
+    	<div id="volumeBg"></div>
+        <div id="volumeTips">Volume</div>
+        <div id="volumeFlag"></div>
+        <div id="volumeBarBg"><div id="volumeBar"></div></div>
+        <div id="volumeText">100/100</div>
+    </div>
+  <!--TimeShift ffwd and rew -->
+  <div id="TimeShift_frDiv" class="TimeShift_frDiv" align="right">
+     <div id="TimeShift_frDivTxt"></div>
+     <div id="TimeShift_frDivIco"></div>
+  </div>
+  <!--Volume End--> 
+  <!--RecordIco-->
+  <div id="RecordDiv" align="right"></div>
+  <!--RecordIco End-->
+  <!--AudioIco-->
+  <div id="AudioDiv" align="right">
+     <div id="AudioDiv_bg" align="right"></div>
+     <div id="AudioDiv_Txt" align="right"> </div>
+  </div> 
+  <!--AudioIco End-->
+  <!--MuteIco-->
+  <div id="MuteDiv" align="right">
+    <div id="MuteDiv_bg" align="right"></div>
+    <div id="MuteDivIco" align="right"></div>
+  </div> 
+  <!--MuteIco End-->
+  <!--TimeShift-->
+  <div id="TsPlDiv" class="TsPlDiv"></div>
+<div id="TimeShiftDiv_H">
+  <div id="TimeShiftDiv_bg"></div>
+  <div id="TimeShiftDiv" class="TimeShiftDiv">
+    <div id="TimeShiftTxt_L">Time shifting</div>
+    <!------------------ TimeShift Bar -------------------->
+    <div id="TimeShiftBar">
+      <!--Seek-->
+      <div id="Ts_SeekDiv" class="Ts_SeekDiv">
+          <span id="Seek_Input_0"  style="left:17px;"></span><span id="Seek_Input_1" style="left:29px;"></span> 
+          <span style="left:41px;">:</span> 
+          <span id="Seek_Input_2" style="left:48px;"></span><span id="Seek_Input_3" style="left:60px;"></span> 
+          <span style="left:72px;">:</span> 
+          <span id="Seek_Input_4" style="left:79px;"></span><span id="Seek_Input_5" style="left:91px;"></span> 
+      </div>
+      <!--Seek End-->
+      <div id="TimeShiftBar_bg" class="TimeShiftBar_bg"></div>
+      <div id="TimeShiftBar_bar" class="TimeShiftBar_bar"></div>
+      <div id="TimeShiftBar_PL_bar" class="TimeShiftBar_PL_bar"></div>
+      <div id="TimeShiftBar_PL_bar_Div" class="TimeShiftBar_PL_bar_Div"></div>
+    </div>
+    <div id="Ts_leftDiv" align="right" style="position:absolute;top:0px; right:36px; width:410px;">
+      <!------------------ Play Time: -------------------->
+      <div class="TSTxt_PLtime" style="left:94px;">Play:</div> 
+      <div id="TSTxt_PLtime" style="left:138px;">
+        <span id="Ts_PLtime_H"></span><span>:</span><span id="Ts_PLtime_M"></span><span>:</span><span id="Ts_PLtime_S"></span>
+      </div>  
+      <!------------------ Time Shift: -------------------->
+      <div class="TSTxt_TStime" style="left:213px;"> / Time shifting:</div>  
+      <div id="TSTxt_TStime" style="left:343px;">
+        <span id="Ts_TLtime_H"></span><span>:</span><span id="Ts_TLtime_M"></span><span>:</span><span id="Ts_TLtime_S"></span>    
+      </div> 
+    </div>
+  </div>
+</div>
+  <!--TimeShift End-->
+  <!--Pip Div Start-->
+  <div id="pipDivTxt">
+  </div>
+  <!--Pip Div End-->
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<script language='JavaScript' src='js/config.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/common.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/net.js' charset='utf-8'></script>
+<script language='JavaScript' src='js/disk_s.js' charset='utf-8'></script>
+<script language='JavaScript'>isKeyClock = true;</script>
+<title></title>
+<style type='text/css'>
+<!--
+* {
+	margin: 0 0 0 0;
+	position: absolute;
+	color: #FFFFFF;
+}
+-->
+</style>
+</head>
+<body bgcolor='#000000' onload='getConfig()'>
+
+
+<!-- 项目样式列表 -->
+<div id='styleList' style='left:0px; top:0px; width:1280px; height:720px;'>
+	<!-- 左侧信息(功能图标、硬盘标志、当前路径) -->
+	<div id='leftDiv' style='left:172px; top:0px; width:153px; height:720px; overflow:hidden;'>
+		<div id='projectIcon' style='left:0px; top:199px; width:153px; height:225px; overflow:hidden;'></div>
+		<div id='projectText' style='left:0px; top:424px; width:153px; height:30px; word-wrap:break-word; line-height:24px; text-align:center; font-size:24px; overflow:hidden;'></div>
+	</div>
+
+	<!-- 竖线 -->
+	<div id='lineDiv' style='left:369px; top:77px; width:2px; height:559px; background-image:url(style1/line.png); overflow:hidden;'></div>
+
+
+	<!-- 硬盘选择 -->
+	<div id='hardDisk' style='left:400px; top:131px; width:260px; height:245px; overflow:hidden;'>
+		<!-- 硬盘选择提示 -->
+		<div id='hardDiskTitle' style='left:4px; top:0px; width:180px; height:40px; overflow:hidden;'></div>
+		<!-- 硬盘选择列表 -->
+		<div id='hardDiskIcon0' style='left:11px; top: 54px; width:203px; height:37px; overflow:hidden; background-image:url(style1/hardDiskOff.png);'></div>
+		<div id='hardDiskIcon1' style='left:11px; top:102px; width:203px; height:37px; overflow:hidden; background-image:url(style1/hardDiskOff.png);'></div>
+		<div id='hardDiskIcon2' style='left:11px; top:150px; width:203px; height:37px; overflow:hidden; background-image:url(style1/hardDiskOff.png);'></div>
+		<div id='hardDiskIcon3' style='left:11px; top:198px; width:203px; height:37px; overflow:hidden; background-image:url(style1/hardDiskOff.png);'></div>
+		<!-- 硬盘选择焦点 -->
+		<div id='hardDiskFocus' style='left:0px; top:43px; width:258px; height:59px; overflow:hidden;'></div>
+		<!-- 硬盘选择文字 -->
+		<div id='hardDiskText0' style='left:31px; top: 54px; width:163px; height:37px; line-height:37px; color:#8a8a8a; font-size:24px; overflow:hidden;'></div>
+		<div id='hardDiskText1' style='left:31px; top:102px; width:163px; height:37px; line-height:37px; color:#8a8a8a; font-size:24px; overflow:hidden;'></div>
+		<div id='hardDiskText2' style='left:31px; top:150px; width:163px; height:37px; line-height:37px; color:#8a8a8a; font-size:24px; overflow:hidden;'></div>
+		<div id='hardDiskText3' style='left:31px; top:198px; width:163px; height:37px; line-height:37px; color:#8a8a8a; font-size:24px; overflow:hidden;'></div>
+	</div>
+
+
+
+	<!-- 分区选择 -->
+	<div id='partitionBg' style='left:671px; top:113px; width:444px; height:511px; overflow:hidden;'>
+		<!-- 分区选择焦点 -->
+		<div id='partitionList' style='left:13px; top:10px; width:406px; height:1px; overflow:hidden; background-repeat:no-repeat;'>
+			<div id='partitionFocus' style='left:0px; top:0px; width:406px; height:96px;'></div>
+			<!-- 分区大小指示 -->
+			<div id='partitionIcon0' style='left:121px; top: 56px; width:1px; height:11px; background-color:#19a5de; overflow:hidden;'></div>
+			<div id='partitionIcon1' style='left:121px; top:150px; width:1px; height:11px; background-color:#19a5de; overflow:hidden;'></div>
+			<div id='partitionIcon2' style='left:121px; top:244px; width:1px; height:11px; background-color:#19a5de; overflow:hidden;'></div>
+			<div id='partitionIcon3' style='left:121px; top:338px; width:1px; height:11px; background-color:#19a5de; overflow:hidden;'></div>
+			<div id='partitionIcon4' style='left:121px; top:432px; width:1px; height:11px; background-color:#19a5de; overflow:hidden;'></div>
+	
+			<!-- 分区文字 -->
+			<div id='partitionText0' style='left:119px; top: 22px; width:259px; height:25px; line-height:25px; font-size:20px; overflow:hidden;'></div>
+			<div id='partitionText1' style='left:119px; top:116px; width:259px; height:25px; line-height:25px; font-size:20px; overflow:hidden;'></div>
+			<div id='partitionText2' style='left:119px; top:210px; width:259px; height:25px; line-height:25px; font-size:20px; overflow:hidden;'></div>
+			<div id='partitionText3' style='left:119px; top:304px; width:259px; height:25px; line-height:25px; font-size:20px; overflow:hidden;'></div>
+			<div id='partitionText4' style='left:119px; top:398px; width:259px; height:25px; line-height:25px; font-size:20px; overflow:hidden;'></div>
+		</div>
+
+	</div>
+
+
+	<!-- 页号信息、翻页指示 -->
+	<div id='pageInfo' style='left:915px; top:630px; width:191px; height:23px; overflow:hidden;'>
+		<div id='pageInfoStyle' style='left:0px; top:0px; width:135px; height:23px; line-height:23px; text-align:right; font-size:18px; overflow:hidden;'></div>
+		<div id='pageUpStyle' style='left:142px; top:0px; width:20px; height:23px; overflow:hidden;'></div>
+		<div id='pageDnStyle' style='left:168px; top:0px; width:20px; height:23px; overflow:hidden;'></div>
+	</div>
+
+
+
+
+	<!-- 提示信息 -->
+	<div id='divMessage' style='left:0px; top:0px; width:1280px; height:720px; background-color:#000000; filter:alpha(opacity=70); visibility:hidden;'>
+		<div id='messageText' style='left:385px; top:270px; width:510px; height:181px; line-height:30px; font-size:24px; text-align:center; overflow:hidden;'></div>
+	</div>
+
+
+</div>
+
+
+<!-- 功能菜单部分 -->
+<div id='divMenu' style='left:0px; top:0px; width:1280px; height:720px; background-color:#000000; filter:alpha(opacity=70); visibility:hidden;'>
+	<div id='miniMenuBg' style='left:411px; top:290px; width:458px; height:141px; overflow:hidden;'>
+		<div id='divMenuFocus' style='left:32px; top:20px; width:84px; height:92px; overflow:hidden;'></div>
+		<div id='divMenuPos1' style='left: 32px; top:20px; width:84px; height:92px; overflow:hidden;'></div>
+		<div id='divMenuPos2' style='left:126px; top:20px; width:84px; height:92px; overflow:hidden;'></div>
+		<div id='divMenuPos3' style='left:220px; top:20px; width:84px; height:92px; overflow:hidden;'></div>
+		<div id='divMenuPos4' style='left:314px; top:20px; width:84px; height:92px; overflow:hidden;'></div>
+	</div>
+</div>
+
+
+
+
+</body>
+</html>

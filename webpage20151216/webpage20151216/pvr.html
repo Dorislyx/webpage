@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="style/menu.css" type="text/css" />
+<link rel="stylesheet" href="style/pvr.css" type="text/css" />
+<script language="javascript" src="js/menu.js"></script>
+<script language="javascript" src="js/pvr.js"></script>
+<script language="javascript" src="js/keyboard.js"></script>
+<title>PVR</title>
+</head>
+
+<body onload="init();" bgcolor="transparent">
+<!-- 背景半透 -->
+<div id="pvrBg"></div>
+<!-- 全屏页面 -->
+<div id="pvrMain">
+	<!-- 图标，LOGO，时间，主选项 -->
+	<div id="pvrHead">
+        <!-- 图标 -->
+    	<div id="pageIcon">PVR</div>
+        <!-- 时间 -->
+        <div id="pageTimeShow">17:17  19/01</div>
+        <!-- LOGO -->
+        <div id="pageLogo"></div>
+        <!-- 列表类型 -->
+        <div id="listTypeBg">
+        	<div id="leftButton"></div><div id="RightButton"></div>
+            <div id="listTypeBox">
+                <div id="listTypeFocus"></div>
+                <div id="listTypeFocusMove"></div>
+                <div id="listTypeElement0" style="left:1px;">ALL</div>
+                <div id="listTypeElement1" style="left:273px;">FAVORITE</div>
+                <div id="listTypeElement2" style="left:545px;">LOCKED</div>
+            </div>
+        </div>
+    </div>
+	<!-- PVR列表 -->
+    <div id="pvrBody">
+        <!-- 列表标题 -->
+    	<div id="fileListTitle">
+            <li style="width:98px; border-left:0px;">Flag</li><li style="width:557px; text-indent:24px; text-align:left;">File Name</li><li style="width:112px;">Length</li><li style="width:110px;">Size</li><li style="width:142px;">Date</li><li style="width:110px; border-right:0px;">Time</li>
+        </div>
+        <div id="fileListTotal">
+        	<div id="fileListBg">
+            	<li style="top:  0px;"></li>
+            	<li style="top: 43px;"></li>
+            	<li style="top: 86px;"></li>
+            	<li style="top:129px;"></li>
+            	<li style="top:172px;"></li>
+            	<li style="top:215px;"></li>
+            	<li style="top:258px;"></li>
+            	<li style="top:301px;"></li>
+            </div>
+            <!-- 列表焦点 -->
+            <div id="fileListFocus"></div>
+            <!-- 列表信息 -->
+            <div id="fileListInfo">
+            	<li id="listRow0" style="top:  0px;">
+                	<div id="fileFlag0"><div id="lockFlag0"></div><div id="favFlag0"></div></div>
+                    <div id="fileName0"></div>
+                    <div id="fileLength0"></div>
+                    <div id="fileSize0"></div>
+                    <div id="fileDate0"></div>
+                    <div id="fileTime0"></div>
+                </li>
+            	<li id="listRow1" style="top: 43px;">
+                	<div id="fileFlag1"><div id="lockFlag1"></div><div id="favFlag1"></div></div>
+                    <div id="fileName1"></div>
+                    <div id="fileLength1"></div>
+                    <div id="fileSize1"></div>
+                    <div id="fileDate1"></div>
+                    <div id="fileTime1"></div>
+                </li>
+            	<li id="listRow2" style="top: 86px;">
+                	<div id="fileFlag2"><div id="lockFlag2"></div><div id="favFlag2"></div></div>
+                    <div id="fileName2"></div>
+                    <div id="fileLength2"></div>
+                    <div id="fileSize2"></div>
+                    <div id="fileDate2"></div>
+                    <div id="fileTime2"></div>
+                </li>
+            	<li id="listRow3" style="top:129px;">
+                	<div id="fileFlag3"><div id="lockFlag3"></div><div id="favFlag3"></div></div>
+                    <div id="fileName3"></div>
+                    <div id="fileLength3"></div>
+                    <div id="fileSize3"></div>
+                    <div id="fileDate3"></div>
+                    <div id="fileTime3"></div>
+                </li>
+            	<li id="listRow4" style="top:172px;">
+                	<div id="fileFlag4"><div id="lockFlag4"></div><div id="favFlag4"></div></div>
+                    <div id="fileName4"></div>
+                    <div id="fileLength4"></div>
+                    <div id="fileSize4"></div>
+                    <div id="fileDate4"></div>
+                    <div id="fileTime4"></div>
+                </li>
+            	<li id="listRow5" style="top:215px;">
+                	<div id="fileFlag5"><div id="lockFlag5"></div><div id="favFlag5"></div></div>
+                    <div id="fileName5"></div>
+                    <div id="fileLength5"></div>
+                    <div id="fileSize5"></div>
+                    <div id="fileDate5"></div>
+                    <div id="fileTime5"></div>
+                </li>
+            	<li id="listRow6" style="top:258px;">
+                	<div id="fileFlag6"><div id="lockFlag6"></div><div id="favFlag6"></div></div>
+                    <div id="fileName6"></div>
+                    <div id="fileLength6"></div>
+                    <div id="fileSize6"></div>
+                    <div id="fileDate6"></div>
+                    <div id="fileTime6"></div>
+                </li>
+            	<li id="listRow7" style="top:301px;">
+                	<div id="fileFlag7"><div id="lockFlag7"></div><div id="favFlag7"></div></div>
+                    <div id="fileName7"></div>
+                    <div id="fileLength7"></div>
+                    <div id="fileSize7"></div>
+                    <div id="fileDate7"></div>
+                    <div id="fileTime7"></div>
+                </li>
+            </div>
+        </div>
+        <!-- 翻页图标，页号 -->
+        <div id="pageNumBar">
+        	<div id="pageButtonUp"></div><div id="pageButtonDown"></div><div id="pageNumText"></div>
+        </div>
+        <!-- 删除提示 -->
+        <div id="delTips">
+        	<div id="delTipsIcon"></div><div id="delTipsText">Are you sure delete it ?</div>
+            <div id="delLeftButt">Confirm</div><div id="delRightButt">Cancel</div>
+        </div>
+        <!-- 加锁文件不能删除提示 -->
+        <div id="delLockTips">
+        	<div id="delLockTipsIcon"></div><div id="delLockTipsText">Locked file, Can't delete !</div>
+            <div id="delLockButt" style="left:135px;">Return</div>
+        </div>
+        <!-- 重命名提示 -->
+        <div id="renameFileBox">
+        	<div id="renameText"></div>
+            <div id="renameLeftButt" style="left:65px;">Save</div><div id="renameRightButt">Cancel</div>
+        </div>
+        <!-- 重命名错误提示 -->
+        <div id="renameTips">
+        	<div id="renameTipsIcon"></div><div id="renameTipsText">Rename error !</div>
+            <div id="renameReturnButt" style="left:135px;">Return</div>
+        </div>
+    </div>
+    <!-- 提示信息 -->
+    <div id="pvrFoot">
+    	<div id="pageTips">Tips</div>
+        <div id="pageTipsInfo">
+        	<li style="width:100px;">[Ok] Play</li>
+            <li style="width:160px;">[Back] Return</li>
+            <li style="width:95px;">Lock</li>
+            <li style="width:109px;">Delete</li>
+            <li style="width:119px;">Favorite</li>
+            <li style="width:120px;">Rename</li>
+            <div class="tipsButton" style="left:240px; background-color:#e50808;"></div>
+            <div class="tipsButton" style="left:335px; background-color:#83cf0c;"></div>
+            <div class="tipsButton" style="left:445px; background-color:#fcd001;"></div>
+            <div class="tipsButton" style="left:565px; background-color:#0a62e6;"></div>
+        </div>
+    </div>
+
+<!--模拟键盘-->
+<div id='divKeyboard' style='position:absolute; left:960px; top:235px; width:228px; height:349px; background-image:url(image/keyboardBar1.png); visibility:hidden;'>
+	<div id='keyboardFocus' style='position:absolute; left:9px; top:15px; width:38px; height:34px; background-image:url(image/keyboardFocus.jpg);'></div>
+	<div id='keyboardText' style='position:absolute; left:0px; top:4px; width:228px; height:326px; background-image:url(image/keyboardText.png);'></div>
+</div>
+<!--模拟键盘-->
+
+</div>
+<!-- 播放文件后的控制 -->
+<div id="playFullScreen">
+	<!-- 播放状态图标 -->
+	<div id="playStatusIcon"></div>
+    <!-- 播放状态条 -->
+    <div id="playStatusBar">
+    	<!-- 播放状态条半透背景 -->
+    	<div id="playBarBg"></div>
+        <!-- 提示文字 -->
+        <div id="playJinduTips" class="tipsJinduBar">Process</div>
+        <!-- 提示图标 -->
+        <div id="playJinduFlag"></div>
+        <!-- 播放进度条背景 -->
+        <div id="playJinduBarBg" class="playJinduBarBg" style="width:610px;"></div>
+    	<!-- 播放进度条 -->
+    	<div id="playJinduBar">
+        	<div id="seekBar">
+                <div id="seekValueBg"></div>
+                <div id="seekBarText">
+                    <li id="seekText0">0</li>
+                    <li id="seekText1">1</li>
+                    <li style="width:4px;">:</li>
+                    <li id="seekText2">2</li>
+                    <li id="seekText3">3</li>
+                    <li style="width:4px;">:</li>
+                    <li id="seekText4">4</li>
+                    <li id="seekText5">5</li>
+                </div>
+            </div>
+        </div>
+        <!-- 播放时间 -->
+        <div id="playTimeShow" class="playTimeText" style="left:830px; width:200px;"></div>
+        <!--
+        <div id="totalTimeShow" class="playTimeText" style="left:930px; width:100px; background:#990;"></div>
+        <div id="currentTimeValue" style="left:147px; text-align:center;"></div>
+        <div id="totalTimeValue" style="left:434px; text-align:center;"></div>
+        -->
+    </div>
+    <!-- 音量控制部分 -->
+    <div id="volumeDiv">
+    	<div id="volumeBg"></div>
+        <div id="volumeTips">Volume</div>
+        <div id="volumeFlag"></div>
+        <div id="volumeBarBg"><div id="volumeBar"></div></div>
+        <div id="volumeText">100/100</div>
+    </div>
+    <!-- 静音图标 -->
+    <div id="muteIcon">
+    	<div id="muteIconBg"></div>
+        <div id="muteIconImg"></div>
+    </div>
+    <!-- 声道信息 -->
+    <div id="stereoDiv">
+    	<div id="stereoBg"></div>
+        <div id="stereoText"></div>
+    </div>
+</div>
+</body>
+</html>
